@@ -73,35 +73,35 @@ define(['common/BasePage','moment'], function (BasePage, Moment) {
          */
         timingCountTask: function () {
             var _this = this;
-            window.top.topPage.ajax({
-                url: root + "/vTaskReminder/index/timingCountTask.html",
-                dataType: "json",
-                type: "POST",
-                success: function (data) {
-                    var taskCount = data.taskCount;
-                    $("#unReadTaskCount").text(taskCount);
-                    var tasks = data.tasks;
-                    var voices = data.taskVoice;
-                    if (tasks && voices) {
-                        //存款
-                        if (tasks.sysDeposit > 0 || tasks.comDeposit) {
-                            popUp.playVoice('', 'deposit');
-                        }
-                        //玩家取款
-                        if (tasks.playerWithdraw > 0) {
-                            popUp.playVoice('', 'draw');
-                        }
-                        //优惠审核
-                        if (tasks.favorable > 0) {
-                            popUp.playVoice('', 'audit');
-                        }
-                    }
-
-                },
-                error: function (event, xhr, settings) {
-                    console.log(xhr);
-                }
-            })
+            // window.top.topPage.ajax({
+            //     url: root + "/vTaskReminder/index/timingCountTask.html",
+            //     dataType: "json",
+            //     type: "POST",
+            //     success: function (data) {
+            //         var taskCount = data.taskCount;
+            //         $("#unReadTaskCount").text(taskCount);
+            //         var tasks = data.tasks;
+            //         var voices = data.taskVoice;
+            //         if (tasks && voices) {
+            //             //存款
+            //             if (tasks.sysDeposit > 0 || tasks.comDeposit) {
+            //                 popUp.playVoice('', 'deposit');
+            //             }
+            //             //玩家取款
+            //             if (tasks.playerWithdraw > 0) {
+            //                 popUp.playVoice('', 'draw');
+            //             }
+            //             //优惠审核
+            //             if (tasks.favorable > 0) {
+            //                 popUp.playVoice('', 'audit');
+            //             }
+            //         }
+            //
+            //     },
+            //     error: function (event, xhr, settings) {
+            //         console.log(xhr);
+            //     }
+            // })
         },
         countTaskNum: function () {
             var _this = this;
@@ -152,17 +152,17 @@ define(['common/BasePage','moment'], function (BasePage, Moment) {
                 }
             } else {
                 window.top.topPage.playerNumberLastTime = new Date().getTime();
-                window.top.topPage.ajax({
-                    url: root + "/merchant/account/playerOnline/playerNum.html",
-                    dataType: "json",
-                    success: function (data) {
-                        $("#onlinePlayerNum").text(data.onlinePlayerNum);
-                        $("#activePlayerNum").text(data.activePlayerNum);
-                    },
-                    error: function (event, xhr, settings) {
-                        console.log(xhr);
-                    }
-                });
+                // window.top.topPage.ajax({
+                //     url: root + "/merchant/account/playerOnline/playerNum.html",
+                //     dataType: "json",
+                //     success: function (data) {
+                //         $("#onlinePlayerNum").text(data.onlinePlayerNum);
+                //         $("#activePlayerNum").text(data.activePlayerNum);
+                //     },
+                //     error: function (event, xhr, settings) {
+                //         console.log(xhr);
+                //     }
+                // });
             }
             var playerNumberTimer = setTimeout(function () {
                 _this.playerNumTimer();
