@@ -2,14 +2,14 @@
 <%@ tag import="org.soul.commons.data.json.JsonTool" %>
 <%@ tag import="org.soul.commons.lang.string.I18nTool" %>
 <%@ tag import="org.soul.model.sys.po.SysDict" %>
-<%@ tag import="so.wwb.lotterybox.web.tools.SessionManagerCommon" %>
-<%@ tag import="so.wwb.lotterybox.web.cache.Cache" %>
-<%@ tag import="so.wwb.lotterybox.model.manager.lottery.po.Lottery" %>
+<%@ tag import="so.wwb.creditbox.web.tools.SessionManagerCommon" %>
+<%@ tag import="so.wwb.creditbox.web.cache.Cache" %>
+<%@ tag import="so.wwb.creditbox.model.manager.lottery.po.Lottery" %>
 <%@ tag import="java.util.*" %>
 <%@ tag import="org.soul.commons.collections.CollectionTool" %>
 <%@ tag import="org.soul.commons.collections.MapTool" %>
 <%@ tag import="sun.rmi.runtime.Log" %>
-<%@ tag import="so.wwb.lotterybox.model.common.TopMenuJson" %>
+<%@ tag import="so.wwb.creditbox.model.common.TopMenuJson" %>
 
 
 <%@ tag language="java" pageEncoding="UTF-8" %>

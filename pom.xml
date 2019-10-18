@@ -2,11 +2,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>base</artifactId>
-        <groupId>so.wwb.lotterybox</groupId>
-        <version>${lotterybox.version}</version>
+        <groupId>so.wwb.creditbox</groupId>
+        <version>${creditbox.version}</version>
         <relativePath>../base/pom.xml</relativePath>
     </parent>
-    <version>${lotterybox.version}</version>
+    <version>${creditbox.version}</version>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>rcenter</artifactId>
     <packaging>war</packaging>

@@ -1,6 +1,6 @@
 
-<%@ tag import="so.wwb.lotterybox.web.tools.SessionManagerCommon" %>
-<%@ tag import="so.wwb.lotterybox.web.cache.Cache" %>
+<%@ tag import="so.wwb.creditbox.web.tools.SessionManagerCommon" %>
+<%@ tag import="so.wwb.creditbox.web.cache.Cache" %>
 <%@ tag import="java.util.*" %>
 <%@ tag import="org.soul.commons.locale.DateFormat" %>
 
