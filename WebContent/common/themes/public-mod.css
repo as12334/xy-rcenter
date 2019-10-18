@@ -1,0 +1,465 @@
+/*===============================================
+ *
+ * Public Module Style 常用公共页面组件样式
+ *
+ ================================================= *
+
+/*===============================================
+ * Part-01
+ * 银行 & 第三方支付
+ * Author: Steven
+ * Update by 2017-02-12
+================================================*/
+.pay-bank,.pay-third{width:125px;display:inline-block;height:30px;vertical-align:middle;background:url(../images/pay-bank.png) left top no-repeat;}
+.pay-bank.sm,.pay-third.sm{width:70px;display:inline-block;height:30px;vertical-align:middle;background:url(../images/pay-bank-x.png) left top no-repeat;}
+.pay-third{background:url(../images/pay-third.png) left top no-repeat;}
+.pay-third.sm{background:url(../images/pay-third-x.png) left top no-repeat;}
+
+/* 银行小logo */
+/*.pay-bank.sm.arcu{background-position: 0 -50px}!*安徽银行*!*/
+/*.pay-bank.sm.nxrcu{background-position: 0 -2390px}!*黄河农村商业银行*!*/
+/*.pay-bank.sm.orbank{background-position: 0 -2415px}!*鄂尔多斯银行*!*/
+/*.pay-bank.sm.qdccb{background-position: 0 -2440px}!*青岛银行*!*/
+/*.pay-bank.sm.scrcu{background-position: 0 -2520px}!*四川农村信用社*!*/
+/*.pay-bank.sm.sdrcu{background-position: 0 -2572px}!*山东省农村信用社*!*/
+/*.pay-bank.sm.whrcb{background-position: 0 -2980px}!*武汉农村商业银行*!*/
+/*.pay-bank.sm.ascb{background-position: 0 -80px}!*鞍山银行*!*/
+/*.pay-bank.sm.cqbank{background-position: 0 -625px}!*重庆银行*!*/
+/*.pay-bank.sm.gycb{background-position: 0 -1180px}!*贵阳银行*!*/
+/*.pay-bank.sm.dycb{background-position: 0 -3730px}!*德阳银行*!*/
+/*.pay-bank.sm.hurcb{background-position: 0 -1590px}!*湖北省农村信用社*!*/
+/*.pay-bank.sm.hnrcu{background-position: 0 -1477px}!*河南省农村信用社*!*/
+/*.pay-bank.sm.nxbank{background-position: 0 -2367px}!*宁夏银行*!*/
+/*.pay-bank.sm.jsb{background-position: 0 -1847px}!*晋商银行*!*/
+/*.pay-bank.sm.jxbank{background-position: 0 -1892px}!*嘉兴银行*!*/
+/*.pay-bank.sm.nbyz{background-position: 0 -2257px}!*鄞州银行*!*/
+/*.pay-bank.sm.hsbc{background-position: 0 -3890px}!*汇丰银行*!*/
+/*.pay-bank.sm.jrcb{background-position: 0 -4045px}!*江苏江明农村商业银行*!*/
+/*.pay-bank.sm.hbhsbank{background-position: 0 -4073px}!*湖北银行黄石分行*!*/
+/*.pay-bank.sm.boc{background-position: 0 -4253px}!*中国银行*!*/
+/*.pay-bank.sm.ceb{background-position: 0 -4312px}!*中国光大银行*!*/
+
+/*60*/
+/*银行大logo*/
+.pay-bank.arcu{background-position:0 -65px}/* 安徽农村信用社*/
+.pay-bank.ascb{background-position: 0 -95px}/*鞍山银行*/
+.pay-bank.aycb{background-position: 0 -120px}/*安阳银行*/
+.pay-bank.bankwf{background-position: 0 -150px}/*潍坊银行*/
+.pay-bank.bgb{background-position: 0 -180px}/*广西北部湾银行*/
+.pay-bank.bhb{background-position: 0 -210px}/*河北银行*/
+.pay-bank.bjrcb{background-position: 0 -245px}/*北京农商银行*/
+.pay-bank.bocd{background-position: 0 -275px}/*承德银行*/
+.pay-bank.bocy{background-position: 0 -308px}/*朝阳银行*/
+.pay-bank.bod{background-position: 0 -335px}/*东莞银行*/
+.pay-bank.bohaib{background-position: 0 -365px}/*渤海银行*/
+.pay-bank.bojz{background-position: 0 -395px}/*锦州银行*/
+.pay-bank.bop{background-position: 0 -425px}/*平顶山银行*/
+.pay-bank.bosz{background-position: 0 -455px}/*苏州银行*/
+.pay-bank.boyk{background-position: 0 -487px}/*营口银行*/
+.pay-bank.ccqtgb{background-position: 0 -515px}/*重庆三峡银行*/
+.pay-bank.cdb{background-position: 0 -545px}/*国家开发银行*/
+.pay-bank.cdcb{background-position: 0 -578px}/*成都银行*/
+.pay-bank.cdrcb{background-position: 0 -605px}/*成都农商银行*/
+.pay-bank.cqbank{background-position: 0 -640px}/*重庆银行*/
+.pay-bank.crcbank{background-position: 0 -670px}/*重庆农村商业银行*/
+.pay-bank.cscb{background-position: 0 -695px}/*长沙银行*/
+.pay-bank.csrcb{background-position: 0 -725px}/*常熟农商银行*/
+.pay-bank.czcb{background-position: 0 -753px}/*浙江稠州商业银行*/
+.pay-bank.czrcb{background-position: 0 -780px}/*江南农村商业银行*/
+.pay-bank.daqingb{background-position: 0 -783px}/*龙江银行*/
+.pay-bank.dlb{background-position: 0 -810px}/*大连银行*/
+.pay-bank.drcbcl{background-position: 0 -845px}/*东莞农村商业银行*/
+.pay-bank.dyccb{background-position: 0 -875px}/*东营银行*/
+.pay-bank.dzbank{background-position: 0 -905px}/*德州银行*/
+.pay-bank.egbank{background-position: 0 -933px}/*恒丰银行*/
+.pay-bank.fdb{background-position: 0 -960px}/*富滇银行*/
+.pay-bank.fjhxbc{background-position: 0 -995px}/*福建海峡银行*/
+.pay-bank.fscb{background-position: 0 -1020px}/*抚顺银行*/
+.pay-bank.fxcb{background-position: 0 -1050px}/*阜新银行*/
+.pay-bank.gdrcc{background-position: 0 -1075px}/*广东农信*/
+.pay-bank.glbank{background-position: 0 -1105px}/*桂林银行*/
+.pay-bank.grcb{background-position: 0 -1135px}/*广州农商银行*/
+.pay-bank.gsrcu{background-position: 0 -1168px}/*甘肃省农村信用社*/
+.pay-bank.gycb{background-position: 0 -1195px}/*贵阳银行*/
+.pay-bank.gzb{background-position: 0 -1220px}/*赣州银行*/
+.pay-bank.gzrcu{background-position: 0 -1253px}/*贵阳农村信用社*/
+.pay-bank.h3cb{background-position: 0 -1280px}/*内蒙古银行*/
+.pay-bank.hanabank{background-position: 0 -1315px}/*韩亚银行*/
+.pay-bank.hbc{background-position: 0 -1340px}/*湖北银行*/
+.pay-bank.hbrcu{background-position: 0 -1370px}/*河北省农村信用社*/
+.pay-bank.hdbank{background-position: 0 -1400px}/*邯郸银行*/
+.pay-bank.hkb{background-position: 0 -1430px}/*汉口银行*/
+.pay-bank.hnrcc{background-position: 0 -1460px}/*湖南省农村信用社*/
+.pay-bank.hnrcu{background-position: 0 -1490px}/*河南省农村信用社*/
+.pay-bank.hrxjb{background-position: 0 -1515px}/*华融湘江银行*/
+.pay-bank.hsbank{background-position: 0 -1545px}/*徽商银行*/
+.pay-bank.hsbk{background-position: 0 -1570px}/*衡水银行*/
+.pay-bank.hurcb{background-position: 0 -1605px}/*湖北省农村信用社*/
+.pay-bank.hzccb{background-position: 0 -1630px}/*湖州银行*/
+.pay-bank.jhbank{background-position: 0 -1665px}/*金华银行*/
+.pay-bank.jinchb{background-position: 0 -1695px}/*晋城银行*/
+.pay-bank.jjbank{background-position: 0 -1730px}/*九江银行*/
+.pay-bank.jlbank{background-position: 0 -1765px}/*吉林银行*/
+.pay-bank.jlrcu{background-position: 0 -1800px}/*吉林省农村信用社*/
+.pay-bank.jnbank{background-position: 0 -1830px}/*济宁银行*/
+.pay-bank.jsb{background-position: 0 -1860px}/*晋商银行*/
+.pay-bank.jsrcu{background-position: 0 -1885px}/*江苏省农村信用社*/
+.pay-bank.jxbank{background-position: 0 -1915px}/*嘉兴银行*/
+.pay-bank.jxrcu{background-position: 0 -1940px}/*江西省农村信用社*/
+.pay-bank.jzbank{background-position: 0 -1970px}/*晋中银行*/
+.pay-bank.klb{background-position: 0 -2000px}/*昆仑银行*/
+.pay-bank.korlabank{background-position: 0 -2035px}/*库尔勒市商业银行*/
+.pay-bank.ksrb{background-position: 0 -2068px}/*昆山农村商业银行*/
+.pay-bank.langfb{background-position: 0 -2100px}/*廊坊银行*/
+.pay-bank.lsbank{background-position: 0 -2130px}/*莱商银行*/
+.pay-bank.lsbc{background-position: 0 -2160px}/*临商银行*/
+.pay-bank.lycb{background-position: 0 -2185px}/*辽阳银行*/
+.pay-bank.lzyh{background-position: 0 -2215px}/*兰州银行*/
+.pay-bank.mtbank{background-position: 0 -2240px}/*浙江民泰商业银行*/
+.pay-bank.nbyz{background-position: 0 -2270px}/*鄞州银行*/
+.pay-bank.ncb{background-position: 0 -2295px}/*江西银行*/
+.pay-bank.nhb{background-position: 0 -2325px}/*南海农商银行*/
+.pay-bank.njcb{background-position: 0 -2355px}/*南京银行*/
+.pay-bank.nxbank{background-position: 0 -2381px}/*宁夏银行*/
+.pay-bank.nxrcu{background-position: 0 -2405px}/*黄河农村商业银行*/
+.pay-bank.orbank{background-position: 0 -2430px}/*鄂尔多斯银行*/
+.pay-bank.qdccb{background-position: 0 -2455px}/*青岛银行*/
+.pay-bank.qlbank{background-position: 0 -2480px}/*齐鲁银行*/
+.pay-bank.sccb{background-position: 0 -2505px}/*三门峡银行*/
+.pay-bank.scrcu{background-position: 0 -2533px}/*四川农村信用社*/
+.pay-bank.sdeb{background-position: 0 -2560px}/*顺德农商银行*/
+.pay-bank.sdrcu{background-position: 0 -2585px}/*山东省农村信用社*/
+.pay-bank.shrcb{background-position: 0 -2615px}/*上海农商银行*/
+.pay-bank.sjbank{background-position: 0 -2638px}/*盛京银行*/
+.pay-bank.srbank{background-position: 0 -2665px}/*上饶银行*/
+.pay-bank.srcb{background-position: 0 -2690px}/*深圳农村商业银行*/
+.pay-bank.sxcb{background-position: 0 -2720px}/*绍兴银行*/
+.pay-bank.sxrccu{background-position: 0 -2750px}/*陕西信合*/
+.pay-bank.szsbk{background-position: 0 -2780px}/*石嘴山银行*/
+.pay-bank.taccb{background-position: 0 -2812px}/*泰安市商业银行*/
+.pay-bank.tccb{background-position: 0 -2845px}/*天津银行*/
+.pay-bank.tcrcb{background-position: 0 -2880px}/*太仓农村商业银行*/
+.pay-bank.trcb{background-position: 0 -2908px}/*天津农商银行*/
+.pay-bank.urmqccb{background-position: 0 -2940px}/*乌鲁木齐商业银行*/
+.pay-bank.whccb{background-position: 0 -2965px}/*威海市商业银行*/
+.pay-bank.whrcb{background-position: 0 -2993px}/*武汉农村商业银行*/
+.pay-bank.wjrcb{background-position: 0 -3022px}/*吴江农村商业银行*/
+.pay-bank.wrcb{background-position: 0 -3047px}/*无锡农村商业银行*/
+.pay-bank.wzcb{background-position: 0 -3075px}/*温州银行*/
+.pay-bank.xabank{background-position: 0 -3100px}/*西安银行*/
+.pay-bank.xcyh{background-position: 0 -3128px}/*中原银行(原许昌银行)*/
+.pay-bank.xlbank{background-position: 0 -3153px}/*中山小榄村镇银行*/
+.pay-bank.xtb{background-position: 0 -3185px}/*邢台银行*/
+.pay-bank.ybccb{background-position: 0 -3218px}/*宜宾市商业银行*/
+.pay-bank.ydrcb{background-position: 0 -3250px}/*尧都农商银行*/
+.pay-bank.ynrcc{background-position: 0 -3285px}/*云南省农村信用社*/
+.pay-bank.yqccb{background-position: 0 -3320px}/*阳泉市商业银行*/
+.pay-bank.zbcb{background-position: 0 -3380px}/*齐商银行*/
+.pay-bank.zgccb{background-position: 0 -3413px}/*自贡市商业银行*/
+.pay-bank.zjkccb{background-position: 0 -3448px}/*张家口商业银行*/
+.pay-bank.zjnx{background-position: 0 -3485px}/*浙江农信银行*/
+.pay-bank.zrcbank{background-position: 0 -3525px}/*张家港家商业银行*/
+.pay-bank.zycbank{background-position: 0 -3555px}/*贵州银行*/
+.pay-bank.zzbank{background-position: 0 -3585px}/*郑州银行*/
+.pay-bank.xxbank{background-position: 0 -3620px}/*新乡银行*/
+.pay-bank.xybank{background-position: 0 -3650px}/*信阳银行*/
+.pay-bank.lsccb{background-position: 0 -3685px}/*乐山市商业银行*/
+.pay-bank.cgnb{background-position: 0 -3715px}/*南充市商业银行*/
+.pay-bank.dycb{background-position: 0 -3745px}/*德阳银行*/
+.pay-bank.bodd{background-position: 0 -3770px}/*丹东银行*/
+.pay-bank.bsb{background-position: 0 -3805px}/*包商银行*/
+.pay-bank.gxrcu{background-position: 0 -3845px}/*广西农村信用社*/
+.pay-bank.yxccb{background-position: 0 -3875px}/*玉溪市商业银行*/
+.pay-bank.hsbc{background-position: 0 -3905px}/*汇丰银行*/
+.pay-bank.boqh{background-position: 0 -3935px}/*青海银行*/
+.pay-bank.bozk{background-position: 0 -3970px}/*周口银行*/
+.pay-bank.cbkf{background-position: 0 -3995px}/*开封商业银行*/
+.pay-bank.czrcb{background-position: 0 -4030px}/*江南农村商业银行*/
+.pay-bank.jrcb{background-position: 0 -4060px}/*江苏江明农村商业银行*/
+.pay-bank.hbhsbank{background-position: 0 -4085px}/*湖北银行黄石分行*/
+.pay-bank.hbycbank{background-position: 0 -4118px}/*湖北银行宜昌分行*/
+.pay-bank.icbc{background-position: 0 -4143px}/*工商银行*/
+.pay-bank.cmb{background-position: 0 -4173px}/*招商银行*/
+.pay-bank.ccb{background-position: 0 -4205px}/*中国建设银行*/
+.pay-bank.abc{background-position: 0 -4235px}/*中国农业银行*/
+.pay-bank.boc{background-position: 0 -4268px}/*中国银行*/
+.pay-bank.cmbc{background-position: 0 -4295px}/*中国民生银行*/
+.pay-bank.ceb{background-position: 0 -4325px}/*中国光大银行*/
+.pay-bank.comm{background-position: 0 -4355px}/*交通银行*/
+.pay-bank.spdb{background-position: 0 -4385px}/*上海浦东发展银行*/
+.pay-bank.spabank{background-position: 0 -4415px}/*平安银行*/
+.pay-bank.cib{background-position: 0 -4445px}/*兴业银行*/
+.pay-bank.bjbank{background-position: 0 -4475px}/*北京银行*/
+.pay-bank.citic{background-position: 0 -4505px}/*中信银行*/
+.pay-bank.gdb{background-position: 0 -4535px}/*广东发展银行*/
+.pay-bank.psbc{background-position: 0 -4565px}/*中国邮政储蓄银行*/
+.pay-bank.jsbank{background-position: 0 -4595px}/*江苏银行*/
+.pay-bank.hxbank{background-position: 0 -4625px}/*华夏银行*/
+.pay-bank.shbank{background-position: 0 -4655px}/*上海银行*/
+.pay-bank.hkbea{background-position: 0 -4715px}/*东亚银行*/
+.pay-bank.nbbank{background-position: 0 -4745px}/*宁波银行*/
+.pay-bank.czbank{background-position: 0 -4775px}/*浙商银行*/
+.pay-bank.hzcb{background-position: 0 -4805px}/*杭州银行*/
+.pay-bank.gcb{background-position: 0 -4835px}/*广州银行*/
+.pay-bank.hangseng{background-position: 0 -4895px}/*恒生银行*/
+.pay-bank.tzb{background-position: 0 -4925px}/*台州银行*/
+.pay-bank.other{background-position: 0 -4955px}/*其他银行*/
+
+/* 第三方支付 */
+.pay-third.else{background-position: 0 -0;}/* 其他 */
+.pay-third.select{background-position: 0 -30px;}/* 请选择 */
+.pay-third.alipay,
+.pay-third.mobao_zfb,
+.pay-third.rfupay_zfb,
+.pay-third.tonghui_zfb,
+.pay-third.jinanpay_zfb,
+.pay-third.allscore-s_zfb,
+.pay-third.xinbei_zfb,
+.pay-third.ybpay_zfb,
+.pay-third.qianwangpay_zfb,
+.pay-third.xunhuibaopay_zfb,
+.pay-third.yinbang_zfb,
+.pay-third.xunfutong_zfb,
+.pay-third.xunfutong_zfbWap,
+.pay-third.rongepay_zfb,
+.pay-third.lefu_zfb,
+.pay-third.jiupay_zfb{background-position: 0 -60px;}/* 01 支付宝 & 魔宝-支付宝 & 通汇-支付宝 & 金安付-支付宝 & 商银信-扫码支付-支付宝*/
+.pay-third.wechatpay,
+.pay-third.dinpay_wx,
+.pay-third.mobao_wx,
+.pay-third.jiupay_wx,
+.pay-third.rfupay_wx,
+.pay-third.tonghui_wx,
+.pay-third.jinanpay_wx,
+.pay-third.allscore-s_wx,
+.pay-third.funpay_wx,
+.pay-third.heepay_wx,
+.pay-third.allscore_wx,
+.pay-third.ybpay_wx,
+.pay-third.qianwangpay_wx,
+.pay-third.xunhuibaopay_wx,
+.pay-third.yinbang_wx,
+.pay-third.sfoo_wx,
+.pay-third.xinbei_wx,
+.pay-third.okpay_wx,
+.pay-third.xunfutong_wx,
+.pay-third.rongepay_wx,
+.pay-third.lefu_wx{background-position: 0 -90px;}/* 02 微信 & 智付-微信 &  魔宝-微信 & 久付-微信 & 锐付-微信 & 通汇-微信 & 金安付-微信 &商银信-扫码支付-微信*/
+.pay-third.tenpay {background-position: 0 -120px;}/* 03 财付通 */
+.pay-third.unionpay{background-position: 0 -150px;}/* 04 银联在线 */
+.pay-third.chinaums{background-position: 0 -180px;}/* 05 银联商务 */
+.pay-third.bill99{background-position: 0 -210px;}/* 06 快钱 */
+.pay-third.chinapnr{background-position: 0 -240px;}/* 07 汇付天下 */
+.pay-third.yeepay{background-position: 0 -270px;}/* 08 易宝支付 */
+.pay-third.baofoo{background-position: 0 -300px;}/* 09 宝付 */
+.pay-third.ips,
+.pay-third.ips-3,
+.pay-third.ips-7{background-position: 0 -330px;}/* 10 环迅支付 */
+.pay-third.gopay{background-position: 0 -360px;}/* 11 国付宝 */
+.pay-third.allinpay {background-position: 0 -390px;}/* 12 通联支付 */
+.pay-third.lakala{background-position: 0 -420px;}/* 13 拉卡拉 */
+.pay-third.paypal{background-position: 0 -450px;}/* 14 PayPal */
+.pay-third.reapal{background-position: 0 -480px;}/* 15 融宝 */
+.pay-third.bbpay,
+.pay-third.bbpay-old,
+.pay-third.bbpay-new{ background-position: 0 -510px;}/* 16 币币支付 */
+.pay-third.dinpay{background-position: 0 -540px;}/*17 智付 */
+.pay-third.ecpss {background-position: 0 -570px;}/* 19 汇潮支付 */
+.pay-third.kjt{background-position: 0 -600px;}/* 20 快捷通 */
+.pay-third.mobao{background-position: 0 -630px;}/* 21 摩宝 */
+.pay-third.jiupay{background-position: 0 -660px;}/* 22 久付支付 */
+.pay-third.rfupay{background-position: 0 -690px;}/* 23 锐付支付 */
+.pay-third.tonghui{background-position: 0 -720px;}/* 24 通汇卡 */
+
+/*===============================================
+ * Part-02
+ * 注单详细游戏项图标
+ * Author: Steven
+ * Update by 2017-02-12
+================================================*/
+@font-face {
+font-family: 'game-result';
+src:url('../fonts/game-result/game-result.eot');
+src:url('../fonts/game-result/game-result.eot#iefix') format('embedded-opentype'),
+  url('../fonts/game-result/game-result.ttf') format('truetype'),
+  url('../fonts/game-result/game-result.woff') format('woff'),
+  url('../fonts/game-result/game-result.svg#game-result') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+/*玩家vip等级图标*/
+/*正方形*/
+.vip0-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip0_40x40.png) left top no-repeat;}
+.vip0-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip0_60x60.png) left top no-repeat;}
+.vip1-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip1_40x40.png) left top no-repeat;}
+.vip1-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip1_60x60.png) left top no-repeat;}
+.vip2-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip2_40x40.png) left top no-repeat;}
+.vip2-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip2_60x60.png) left top no-repeat;}
+.vip3-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip3_40x40.png) left top no-repeat;}
+.vip3-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip3_60x60.png) left top no-repeat;}
+.vip4-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip4_40x40.png) left top no-repeat;}
+.vip4-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip4_60x60.png) left top no-repeat;}
+.vip5-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip5_40x40.png) left top no-repeat;}
+.vip5-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip5_60x60.png) left top no-repeat;}
+.vip6-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip6_40x40.png) left top no-repeat;}
+.vip6-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip6_60x60.png) left top no-repeat;}
+.vip7-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip7_40x40.png) left top no-repeat;}
+.vip7-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip7_60x60.png) left top no-repeat;}
+.vip8-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip8_40x40.png) left top no-repeat;}
+.vip8-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip8_60x60.png) left top no-repeat;}
+.vip9-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip9_40x40.png) left top no-repeat;}
+.vip9-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip9_60x60.png) left top no-repeat;}
+.vip10-square-small{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip10_40x40.png) left top no-repeat;}
+.vip10-square-big{width:50px;display:inline-block;height:40px;vertical-align:middle;background:url(../images/vip/vip10_60x60.png) left top no-repeat;}
+
+/*小图vip-斜体*/
+.vip-list{width:39px;display:inline-block;height:30px;vertical-align:middle;background:url(../images/vip/vip_min_list.png) no-repeat center left ;}
+.vip-list.vip1{background-position: 0}
+.vip-list.vip2{background-position: -40px}
+.vip-list.vip3{background-position: -80px}
+.vip-list.vip4{background-position: -120px}
+.vip-list.vip5{background-position: -160px}
+.vip-list.vip6{background-position: -199px}
+.vip-list.vip7{background-position: -240px}
+.vip-list.vip8{background-position: -280px}
+.vip-list.vip9{background-position: -321px}
+.vip-list.vip10{background-position: -361px}
+.vip-list.vip0{background-position: -400px}
+
+/*小图vip-正体*/
+.vip-list2{width:35px;display:inline-block;height:30px;vertical-align:middle;background:url(../images/vip/vip_min-list2.png) no-repeat center left ;}
+.vip-list2.vip0{}
+.vip-list2.vip1{background-position: -34px}
+.vip-list2.vip2{background-position: -70px}
+.vip-list2.vip3{background-position: -105px}
+.vip-list2.vip4{background-position: -140px}
+.vip-list2.vip5{background-position: -175px}
+.vip-list2.vip6{background-position: -210px}
+.vip-list2.vip7{background-position: -245px}
+.vip-list2.vip8{background-position: -280px}
+.vip-list2.vip9{background-position: -315px}
+.vip-list2.vip10{background-position: -350px}
+
+
+
+.gr,.gr-2x,.gr-3x,.gr-4x,.gr-5x{color:#333;font-family:'game-result'!important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.gr-2x{font-size: 2em;}
+.gr-3x{font-size: 3em;}
+.gr-4x{font-size: 4em;}
+.gr-5x{font-size: 5em;}
+
+.gr-ft-w:before{content:"\e900";}
+.gr-ft-b:before{content:"\e901";color:#fa1e1e;}
+
+.gr-dice-1:before,.gr-di-1:before{content:"\e902";color:#fa1e1e;}
+.gr-dice-2:before,.gr-di-2:before{content:"\e903";color:#fa1e1e;}
+.gr-dice-3:before,.gr-di-3:before{content:"\e904";}
+.gr-dice-4:before,.gr-di-4:before{content:"\e905";color:#fa1e1e;}
+.gr-dice-5:before,.gr-di-5:before{content:"\e906";}
+.gr-dice-6:before,.gr-di-6:before{content:"\e907";}
+
+.gr-mj-c1:before{content:"\e908";}
+.gr-mj-c2:before{content:"\e909";}
+.gr-mj-c3:before{content:"\e90a";}
+.gr-mj-c4:before{content:"\e90b";}
+.gr-mj-c5:before{content:"\e90c";}
+.gr-mj-c6:before{content:"\e90d";}
+.gr-mj-c7:before{content:"\e90e";}
+.gr-mj-c8:before{content:"\e90f";}
+.gr-mj-c9:before{content:"\e910";}
+.gr-mj-wd:before{content:"\e911";}
+
+.gr-club-a:before,.gr-club-1:before,.gr-c-1:before{content:"\e912";}
+.gr-club-2:before,.gr-c-2:before{content:"\e913";}
+.gr-club-3:before,.gr-c-3:before{content:"\e914";}
+.gr-club-4:before,.gr-c-4:before{content:"\e915";}
+.gr-club-5:before,.gr-c-5:before{content:"\e916";}
+.gr-club-6:before,.gr-c-6:before{content:"\e917";}
+.gr-club-7:before,.gr-c-7:before{content:"\e918";}
+.gr-club-8:before,.gr-c-8:before{content:"\e919";}
+.gr-club-9:before,.gr-c-9:before{content:"\e91a";}
+.gr-club-10:before,.gr-c-10:before{content:"\e91b";}
+.gr-club-j:before,.gr-club-11:before,.gr-c-11:before{content:"\e91c";}
+.gr-club-q:before,.gr-club-12:before,.gr-c-12:before{content:"\e91d";}
+.gr-club-k:before,.gr-club-13:before,.gr-c-13:before{content:"\e91e";}
+
+.gr-diamond-a:before,.gr-diamond-1:before,.gr-d-1:before{content:"\e91f";color:#fa1e1e;}
+.gr-diamond-2:before,.gr-d-2:before{content:"\e920";color:#fa1e1e;}
+.gr-diamond-3:before,.gr-d-3:before{content:"\e921";color:#fa1e1e;}
+.gr-diamond-4:before,.gr-d-4:before{content:"\e922";color:#fa1e1e;}
+.gr-diamond-5:before,.gr-d-5:before{content:"\e923";color:#fa1e1e;}
+.gr-diamond-6:before,.gr-d-6:before{content:"\e924";color:#fa1e1e;}
+.gr-diamond-7:before,.gr-d-7:before{content:"\e925";color:#fa1e1e;}
+.gr-diamond-8:before,.gr-d-8:before{content:"\e926";color:#fa1e1e;}
+.gr-diamond-9:before,.gr-d-9:before{content:"\e927";color:#fa1e1e;}
+.gr-diamond-10:before,.gr-d-10:before{content:"\e928";color:#fa1e1e;}
+.gr-diamond-j:before,.gr-diamond-11:before,.gr-d-11:before{content:"\e929";color:#fa1e1e;}
+.gr-diamond-q:before,.gr-diamond-12:before,.gr-d-12:before{content:"\e92a";color:#fa1e1e;}
+.gr-diamond-k:before,.gr-diamond-13:before,.gr-d-13:before{content:"\e92b";color:#fa1e1e;}
+
+.gr-heart-a:before,.gr-heart-1:before,.gr-h-1:before{content:"\e92c";color:#fa1e1e;}
+.gr-heart-2:before,.gr-h-2:before{content:"\e92d";color:#fa1e1e;}
+.gr-heart-3:before,.gr-h-3:before{content:"\e92e";color:#fa1e1e;}
+.gr-heart-4:before,.gr-h-4:before{content:"\e92f";color:#fa1e1e;}
+.gr-heart-5:before,.gr-h-5:before{content:"\e930";color:#fa1e1e;}
+.gr-heart-6:before,.gr-h-6:before{content:"\e931";color:#fa1e1e;}
+.gr-heart-7:before,.gr-h-7:before{content:"\e932";color:#fa1e1e;}
+.gr-heart-8:before,.gr-h-8:before{content:"\e933";color:#fa1e1e;}
+.gr-heart-9:before,.gr-h-9:before{content:"\e934";color:#fa1e1e;}
+.gr-heart-10:before,.gr-h-10:before{content:"\e935";color:#fa1e1e;}
+.gr-heart-j:before,.gr-heart-11:before,.gr-h-11:before{content:"\e936";color:#fa1e1e;}
+.gr-heart-q:before,.gr-heart-12:before,.gr-h-12:before{content:"\e937";color:#fa1e1e;}
+.gr-heart-k:before,.gr-heart-13:before,.gr-h-13:before{content:"\e938";color:#fa1e1e;}
+
+.gr-spade-a:before,.gr-spade-1:before,.gr-s-1:before{content:"\e939";}
+.gr-spade-2:before,.gr-s-2:before{content:"\e93a";}
+.gr-spade-3:before,.gr-s-3:before{content:"\e93b";}
+.gr-spade-4:before,.gr-s-4:before{content:"\e93c";}
+.gr-spade-5:before,.gr-s-5:before{content:"\e93d";}
+.gr-spade-6:before,.gr-s-6:before{content:"\e93e";}
+.gr-spade-7:before,.gr-s-7:before{content:"\e93f";}
+.gr-spade-8:before,.gr-s-8:before{content:"\e940";}
+.gr-spade-9:before,.gr-s-9:before{content:"\e941";}
+.gr-spade-10:before,.gr-s-10:before{content:"\e942";}
+.gr-spade-j:before,.gr-spade-11:before,.gr-s-11:before{content:"\e943";}
+.gr-spade-q:before,.gr-spade-12:before,.gr-s-12:before{content:"\e944";}
+.gr-spade-k:before,.gr-spade-13:before,.gr-s-13:before{content:"\e945";}
+
+.gr-roulette-0:before{content:"\e946";color:#28963c;}
+.gr-roulette-1:before{content:"\e947";color:#fa1e1e;}
+.gr-roulette-2:before{content:"\e948";}
+.gr-roulette-3:before{content:"\e949";color:#fa1e1e;}
+.gr-roulette-4:before{content:"\e94a";}
+.gr-roulette-5:before{content:"\e94b";color:#fa1e1e;}
+.gr-roulette-6:before{content:"\e94c";}
+.gr-roulette-7:before{content:"\e94d";color:#fa1e1e;}
+.gr-roulette-8:before{content:"\e94e";}
+.gr-roulette-9:before{content:"\e94f";color:#fa1e1e;}
+.gr-roulette-10:before{content:"\e950";}
+.gr-roulette-11:before{content:"\e951";}
+.gr-roulette-12:before{content:"\e952";color:#fa1e1e;}
+.gr-roulette-13:before{content:"\e953";}
+.gr-roulette-14:before{content:"\e954";color:#fa1e1e;}
+.gr-roulette-15:before{content:"\e955";}
+.gr-roulette-16:before{content:"\e956";color:#fa1e1e;}
+.gr-roulette-17:before{content:"\e957";}
+.gr-roulette-18:before{content:"\e958";color:#fa1e1e;}
+.gr-roulette-19:before{content:"\e959";color:#fa1e1e;}
+.gr-roulette-20:before{content:"\e95a";}
+.gr-roulette-21:before{content:"\e95b";color:#fa1e1e;}
+.gr-roulette-22:before{content:"\e95c";}
+.gr-roulette-23:before{content:"\e95d";color:#fa1e1e;}
+.gr-roulette-24:before{content:"\e95e";}
+.gr-roulette-25:before{content:"\e95f";color:#fa1e1e;}
+.gr-roulette-26:before{content:"\e960";}
+.gr-roulette-27:before{content:"\e961";color:#fa1e1e;}
+.gr-roulette-28:before{content:"\e962";}
+.gr-roulette-29:before{content:"\e963";}
+.gr-roulette-30:before{content:"\e964";color:#fa1e1e;}
+.gr-roulette-31:before{content:"\e965";}
+.gr-roulette-32:before{content:"\e966";color:#fa1e1e;}
+.gr-roulette-33:before{content:"\e967";}
+.gr-roulette-34:before{content:"\e968";color:#fa1e1e;}
+.gr-roulette-35:before{content:"\e969";}
+.gr-roulette-36:before{content:"\e96a";color:#fa1e1e;}

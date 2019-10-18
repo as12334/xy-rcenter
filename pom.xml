@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>base</artifactId>
+        <groupId>so.wwb.lotterybox</groupId>
+        <version>${lotterybox.version}</version>
+        <relativePath>../base/pom.xml</relativePath>
+    </parent>
+    <version>${lotterybox.version}</version>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>rcenter</artifactId>
+    <packaging>war</packaging>
+
+    <build>
+        <finalName>rcenter</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warSourceDirectory>WebContent</warSourceDirectory>
+                    <webResources>
+                        <resource>
+                            <directory>${basedir}/target/compress/</directory>
+                            <filtering>true</filtering>
+                            <targetPath>/</targetPath>
+                        </resource>
+                    </webResources>
+                    <warSourceExcludes>WEB-INF/tags/**,static/**</warSourceExcludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- YUI Compressor Maven压缩插件 -->
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>yuicompressor-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>compress</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 读取js,css文件采用UTF-8编码 -->
+                    <encoding>UTF-8</encoding>
+                    <!-- 不显示js可能的错误 -->
+                    <jswarn>false</jswarn>
+                    <!-- 若存在已压缩的文件，会先对比源文件是否有改动  有改动便压缩，无改动就不压缩 -->
+                    <force>false</force>
+                    <!-- 在指定的列号后插入新行 -->
+                    <linebreakpos>-1</linebreakpos>
+                    <!-- 压缩之前先执行聚合文件操作 -->
+                    <preProcessAggregates>true</preProcessAggregates>
+                    <!-- 压缩后保存文件后缀 无后缀 -->
+                    <nosuffix>true</nosuffix>
+                    <!-- 只压缩，不混淆 -->
+                    <nomunge>true</nomunge>
+                    <!-- 源目录，即需压缩的根目录 -->
+                    <sourceDirectory>${basedir}/WebContent</sourceDirectory>
+                    <!-- 输出目录 -->
+                    <outputDirectory>${basedir}/target/compress</outputDirectory>
+                    <!-- 压缩js和css文件 -->
+                    <includes>
+                        <include>**/*.js</include>
+                        <include>**/*.css</include>
+                    </includes>
+                    <!-- 以下目录和文件不会被压缩 -->
+                    <excludes>
+                        <exclude>**/*.min.js</exclude>
+                        <exclude>**/*.min.css</exclude>
+                        <!-- 以下压缩会出错 -->
+                        <exclude>common/js/curl/curl/cram/_stringify.js</exclude>
+                        <exclude>common/js/forgetpassword/Edit.js</exclude>
+                        <exclude>common/js/dist/clipboard.js</exclude>
+                        <exclude>common/js/pcenterJS/popwin.js</exclude>
+                        <exclude>common/js/ueditor/third-party/video-js/video.dev.js</exclude>
+                        <exclude>common/js/layer/**/*.*</exclude>
+                        <exclude>common/js/dist/bootstrap-switch.js</exclude>
+                        <exclude>static/**</exclude>
+                        <exclude>hall/**/*.js</exclude>
+                        <exclude>manager/**/*.js</exclude>
+                        <exclude>mobile/**/*.js</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
