@@ -88,7 +88,7 @@ define(['common/BaseEditPage', 'jqFileInput', 'UE.I18N.' + window.top.language, 
          * 跳转到列表页
          */
         saveCallbakMch:function(){
-            $("#editTestMch").attr('href','/boss/account/merchant/merchantList.html');
+            $("#editTestMch").attr('href','/boss/account/companies/companiesList.html');
             $("#editTestMch").click();
         },
 
