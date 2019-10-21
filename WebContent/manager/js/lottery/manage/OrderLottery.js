@@ -10,7 +10,7 @@ define(['common/BaseEditPage','bootstrapswitch','nestable','css!themesCss/jquery
         sw:true,
 
         init: function (title) {
-            this.formSelector = "form";
+            this.formSelector = "#orderLotteryEditForm";
             this._super();
             /*$('.help-popover').popover();*/
         },
