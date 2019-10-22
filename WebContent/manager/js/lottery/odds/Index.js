@@ -131,8 +131,12 @@ define(['common/BaseListPage', 'WanSpinner'], function (BaseListPage) {
             var group ;
             var oddObj;
             var $input;
-            var odd;
-            var ori;
+            var oddA;
+            var oddB;
+            var oddC;
+            var oriA;
+            var oriB;
+            var oriC;
             var obj;
             var limit;
             var data = {};
@@ -291,7 +295,7 @@ define(['common/BaseListPage', 'WanSpinner'], function (BaseListPage) {
                     }
                 })
             } else{
-                group = $form.find("td div.input-group");
+                group = $form.find("#editable_wrapper tbody th");
                 var lhca = $("input#lhca");
                 var islhca = false;
                 if (lhca && lhca.length>0) { // 六合彩ａ盘
@@ -299,35 +303,58 @@ define(['common/BaseListPage', 'WanSpinner'], function (BaseListPage) {
                     islhca = true
                 }
                 for (var i = 0; i < group.length; i++) {
-                    oddObj = group[i];
-                    $input = $(oddObj).find("input.form-control");
-                    odd = Number($input.val());
-                    ori = Number($input.attr("data-value"));
+
+
+
+                    oddObj = $(group[i]).next("td");
+                    $input = $(oddObj).find("input[name$=oddA]");
+                    oddA = Number($input.val());
+                    oriA = Number($input.attr("data-value"));
+
+                    var oddId = Number($(oddObj).find("input[name$=id]").val());
                     code = String($(oddObj).find("input[name$=code]").val());
                     betNum = String($(oddObj).find("input[name$=betNum]").val());
                     betCode = String($(oddObj).find("input[name$=betCode]").val());
+
+
+                    oddObj = $(oddObj).next("td")
+                    $input = $(oddObj).find("input[name$=oddB]");
+                    oddB = Number($input.val());
+                    oriB = Number($input.attr("data-value"));
+
+                    oddObj = $(oddObj).next("td")
+                    $input = $(oddObj).find("input[name$=oddC]");
+                    oddC = Number($input.val());
+                    oriC = Number($input.attr("data-value"));
+
+
+
 
                     if (!$input.valid()) {
                         $target.unlock();
                         return;
                     }
-                    if (!islhca && odd != ori) {
+                    if (!islhca && oddA != oriA || oddB != oriB || oddC != oriC) {
                         limit = $input.attr("data-limit");
                         //超过赔率定义上限需提示
-                        if (odd > limit) {
+                        if (oddA > limit) {
                             validate.settings.highlight.call(validate, $input, validate.settings.errorClass, validate.settings.validClass);
                             validate.showLabel($input, '赔率不能超过上限' + limit);
                             $target.unlock();
                             return;
                         }
                         obj = {
-                            'id': $(oddObj).find("input[name$=id]").val(),
-                            'odd': odd,
+                            'id': oddId,
+                            'oddA': oddA,
+                            'oddB': oddB,
+                            'oddC': oddC,
                             'betCode': betCode,
                             'betNum': betNum,
                             'siteId': siteId,
                             'code': code,
-                            'oldOdd':ori
+                            'oldOddA':oriA,
+                            'oldOddB':oriB,
+                            'oldOddC':oriC,
                         };
                         array.push(obj);
                     }else if (islhca) {
@@ -335,7 +362,7 @@ define(['common/BaseListPage', 'WanSpinner'], function (BaseListPage) {
                         rebate = Number($rinput.val());
                         rori = Number($rinput.attr("data-value"));
 
-                        if (odd != ori || rebate !=rori) {
+                        if (oddA != ori || rebate !=rori) {
                             limit = $input.attr("data-limit");
                             rlimit = Number($rinput.attr("data-limit"));
                             if (odd > limit) {
