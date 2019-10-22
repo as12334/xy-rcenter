@@ -1,7 +1,7 @@
 define(['common/BaseEditPage'], function (BaseEditPage) {
     return BaseEditPage.extend({
         init: function (formSelector) {
-            this.formSelector = "#editShareholderForm";
+            this.formSelector = "#editCompanyForm";
             this._super(this.formSelector);
         },
         bindEvent: function () {

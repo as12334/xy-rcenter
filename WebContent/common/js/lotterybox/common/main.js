@@ -315,14 +315,14 @@ curl = {
                 requires: [ 'jquery']
             }
         },
-       /* WanSpinner: {
+        WanSpinner: {
             location: 'jquery/plugins/spinner/jquery.spinner',
             config: {
                 loader: 'curl/curl/loader/legacy',
                 exports: '$.fn.WanSpinner',
                 requires: ['jquery']
             }
-        },*/
+        },
         clipboard: 'dist/clipboard'
     },
     preloads: ['bootstrap', 'common/ClassTool']
