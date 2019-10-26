@@ -12,19 +12,23 @@ define(['dialogPlus'],function (dialog) {
         bindEvent: function () {
             // this._super();
             var _this = this;
-            var param = $("#magAdd").data("usertype");
+            var url = $("#magAdd").data("url");
             $(this.formSelector).on("click", "#magAdd", function () {
-                dialog({
-                    id: 'topDialog',
-                    title: "在線",
-                    url: root+ '/vUserManager/createManagerUser.html?search.userType='+param,
-                    fixed: true,
-                    onreset: function () {
+                $.ajax({
+                    loading: true,
+                    url: root + url,
+                    // headers: {
+                    //     "Soul-Requested-With": "XMLHttpRequest"
+                    // },
+                    type: "post",
+                    success: function (data) {
+                        $(".search-list-container").html(data);
                     },
-                    oniframeload: function () {
-                        this.reset()
+                    error: function (data, state, msg) {
+                        //超时导致后台返回,安全密码验证不做任何处理
+
                     }
-                }).showModal();
+                });
             });
         },
 

@@ -1283,10 +1283,10 @@
     float: right;
     width: 30px;
     height: 30px;
-    background: url(/Skin/Green/BoxBg1.png) -61px -192px no-repeat;
+    background: url(images/green/BoxBg1.png) -61px -192px no-repeat;
 }
 .skinGreen .myLayerTitle a:hover{
-    background: url(/Skin/Green/BoxBg1.png) -61px -222px no-repeat;
+    background: url(images/green/BoxBg1.png) -61px -222px no-repeat;
 }
 .skinGreen .myLayer{
     position: absolute;
@@ -1305,7 +1305,7 @@
     font-size: 0;
     top: -10px;
     left: 5px;
-    background: url(/Skin/Green/BoxBg1.png) -290px -91px no-repeat;
+    background: url(images/green/BoxBg1.png) -290px -91px no-repeat;
 }
 .skinGreen .myLayerTitle{
     height: 30px;
@@ -1321,7 +1321,7 @@
     line-height: 30px;
     font-size: 12px;
     padding-left: 5px;
-    /*background: url(/Skin/Green/BoxBg1.png) -63px -152px no-repeat;*/
+    /*background: url(images/green/BoxBg1.png) -63px -152px no-repeat;*/
     font-family:Verdana,"宋体",Arial,Sans;
 }
 

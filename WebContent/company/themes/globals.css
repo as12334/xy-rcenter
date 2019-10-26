@@ -248,7 +248,7 @@ a{text-decoration:none;color:#000}
 	height: 7px;
 	line-height: 7px;
 	font-size: 0px;
-	background: url(/Images/Member/BoxBg.png) -2px -223px no-repeat;
+	background: url(images/BoxBg.png) -2px -223px no-repeat;
 }
 #myxTipsContent{
 	padding: 4px;
