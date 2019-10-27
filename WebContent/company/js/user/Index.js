@@ -1,7 +1,7 @@
 define(['dialogPlus'],function (dialog) {
     return Class.extend({
         init: function () {
-            this.formSelector = "#mainFrame";
+            this.formSelector = "#userListForm";
             // this._super(this.formSelector);
             this.bindEvent();
             this.onPageLoad();
@@ -30,6 +30,28 @@ define(['dialogPlus'],function (dialog) {
                     }
                 });
             });
+
+            $(this.formSelector).on("click", "#search", function () {
+                var url =$( _this.formSelector).attr("action");
+                $.ajax({
+                    loading: true,
+                    url: url,
+                    headers: {
+                        "Soul-Requested-With": "XMLHttpRequest"
+                    },
+                    type: "post",
+                    data:$( _this.formSelector).serialize(),
+                    success: function (data) {
+                        $(".search-list-container").html(data);
+                    },
+                    error: function (data, state, msg) {
+                        //超时导致后台返回,安全密码验证不做任何处理
+
+                    }
+                });
+            });
+
+
         },
 
         onPageLoad: function () {

@@ -217,7 +217,7 @@ define(function (BasePage) {
                                 // },
                                 type: "post",
                                 success: function (data) {
-                                    $(".search-list-container").html(data);
+                                    $("#mainFrameContainer").html(data);
                                 },
                                 error: function (data, state, msg) {
                                     //超时导致后台返回,安全密码验证不做任何处理
