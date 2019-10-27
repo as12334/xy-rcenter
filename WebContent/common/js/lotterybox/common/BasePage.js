@@ -943,25 +943,25 @@ define(['poshytip', 'bootstrap-dialog', 'eventlock', 'jqcountdown', 'daterangepi
             $(e.currentTarget).unlock();
         },
         initContentWidth: function () {
-            $("div.elli").each(function (idx,item) {
-                var width = $($(item).parent()).width();
-                $(item).css("width",(width)+"px");
-                if($(item).attr("class").indexOf("hide")>-1){
-                    $(item).removeClass("hide");
-                    $(item).css("display",'');
-                }else{
-                    $(item).css("display",'');
-                }
-                if($(item).children().length==0){
-                    $(item).attr("title",$(item).text());
-                }
-            });
-
-            $("div.scroll").each(function (idx, item) {
-                var width = $($(item).parent()).width();
-                $(item).css("width",(width)+"px");
-                $(item).text($(item).text().trim());
-            });
+            //TODO 好像没用到
+            // $("div.elli").each(function (idx,item) {
+            //     var width = $($(item).parent()).width();
+            //     $(item).css("width",(width)+"px");
+            //     if($(item).attr("class").indexOf("hide")>-1){
+            //         $(item).removeClass("hide");
+            //         $(item).css("display",'');
+            //     }else{
+            //         $(item).css("display",'');
+            //     }
+            //     if($(item).children().length==0){
+            //         $(item).attr("title",$(item).text());
+            //     }
+            // });
+            // $("div.scroll").each(function (idx, item) {
+            //     var width = $($(item).parent()).width();
+            //     $(item).css("width",(width)+"px");
+            //     $(item).text($(item).text().trim());
+            // });
         },
         puuid:function() {
             var s = [];

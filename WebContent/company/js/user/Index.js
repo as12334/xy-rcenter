@@ -1,8 +1,8 @@
-define(['dialogPlus'],function (dialog) {
-    return Class.extend({
+define(['common/BaseListPage'],function (BaseListPage) {
+    return BaseListPage.extend({
         init: function () {
-            this.formSelector = "#userListForm";
-            // this._super(this.formSelector);
+            this.formSelector = "#mainFrame";
+            this._super(this.formSelector);
             this.bindEvent();
             this.onPageLoad();
         },
@@ -10,7 +10,7 @@ define(['dialogPlus'],function (dialog) {
          * 当前对象事件初始化
          */
         bindEvent: function () {
-            // this._super();
+            this._super();
             var _this = this;
             var url = $("#magAdd").data("url");
             $(this.formSelector).on("click", "#magAdd", function () {
@@ -55,7 +55,7 @@ define(['dialogPlus'],function (dialog) {
         },
 
         onPageLoad: function () {
-
+            this._super();
         }
     })
 });

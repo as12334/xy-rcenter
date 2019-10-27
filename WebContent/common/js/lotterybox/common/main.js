@@ -12,6 +12,9 @@ curl = {
         'common' : {
             location : 'lotterybox/common'
         },
+        'xy' : {
+            location : 'lotterybox/xy'
+        },
         'themesCss' : {
             location : '../themes/'+curTheme
         },
