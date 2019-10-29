@@ -71,7 +71,7 @@ define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
                             if(!data){
                                 _this.myTips({ content: "用戶名已存在！", obj: $(this), myclick: true });
                             }else{
-                                var url = '/sysUserExtend/saveManagerUser.html'
+                                var url = '/vSiteUser/saveManagerUser.html'
                                 $.ajax({
                                     loading: true,
                                     url: root + url,
@@ -154,7 +154,7 @@ define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
 
             $.ajax({
                 loading: true,
-                url: root + "/sysUserExtend/getSubInfo.html",
+                url: root + "/vSiteUser/getSubInfo.html",
                 type: "post",
                 dataType:"JSON",
                 data:{"search.id":userId},
