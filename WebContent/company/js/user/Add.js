@@ -47,38 +47,52 @@ define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
                             return false;
                         }
                         else if (reg) {
-                             if($(this).attr("name") == "result.password" && $("input[name='result.id']").val() != null && $("input[name='result.password']").val() == ""){
-
-                             }else {
-                                 if (!reg.test(value)) {
-                                     mesg = $(this).attr("mesg");
-                                     if (mesg) { _this.myTips({ content: mesg, obj: $(this), myclick: true }); }
-                                     data = false;
-                                     return false;
-                                 }
-                             }
+                            if (!reg.test(value)) {
+                                mesg = $(this).attr("mesg");
+                                if (mesg) { _this.myTips({ content: mesg, obj: $(this), myclick: true }); }
+                                data = false;
+                                return false;
+                            }
                         }
                     }
                 });
                 if(data){
 
 
-                    var url = '/vSiteUser/updateManagerUser.html'
+                    var value = $("input[name='result.username']").val();
                     $.ajax({
                         loading: true,
-                        url: root + url,
+                        url: root + "/remote/checkUsername.html",
                         type: "post",
                         dataType:"JSON",
-                        data:$( _this.formSelector).serialize(),
+                        data:{"result.username":value,"result.userType":"","result.ownerId":""},
 
                         success: function (data) {
-                            alert(data.msg);
-                            if(data.state){
-                                $(".navListBox .onBtn").click();
+                            if(!data){
+                                _this.myTips({ content: "用戶名已存在！", obj: $(this), myclick: true });
+                            }else{
+                                var url = '/vSiteUser/saveManagerUser.html'
+                                $.ajax({
+                                    loading: true,
+                                    url: root + url,
+                                    type: "post",
+                                    dataType:"JSON",
+                                    data:$( _this.formSelector).serialize(),
+
+                                    success: function (data) {
+                                        alert(data.msg);
+                                        if(data.state){
+                                            $(".navListBox .onBtn").click();
+                                        }
+                                    },
+                                    error: function (data, state, msg) {
+                                        //超时导致后台返回,安全密码验证不做任何处理
+
+                                    }
+                                });
                             }
                         },
                         error: function (data, state, msg) {
-                            //超时导致后台返回,安全密码验证不做任何处理
 
                         }
                     });
