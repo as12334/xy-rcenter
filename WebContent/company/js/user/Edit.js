@@ -100,31 +100,6 @@ define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
 
             });
 
-
-
-            //用户名验证
-            // $(_this.formSelector).on("blur","input[name='result.nickname']",function () {
-            //     var value = $(this).val();
-            //     $.ajax({
-            //         loading: true,
-            //         url: root + "/remote/checkUsername.html",
-            //         type: "post",
-            //         dataType:"JSON",
-            //         data:{"result.username":value},
-            //
-            //         success: function (data) {
-            //             if(!data){
-            //                 _this.myTips({ content: "用戶名已存在！", obj: $(this), myclick: true });
-            //             }
-            //         },
-            //         error: function (data, state, msg) {
-            //             //超时导致后台返回,安全密码验证不做任何处理
-            //
-            //         }
-            //     });
-            // });
-
-
         },
 
         onPageLoad: function () {
@@ -135,7 +110,10 @@ define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
                 $("input[name='water']").val($(this).val());
             });
 
+            $(_this.formSelector).on("change","select[name='result.ownerId']",function () {
 
+                _this.getSubInfo($(this).val(),$("input[name='result.userType']").val());
+            });
             $(_this.formSelector).on("change","input[name='stintId']",function () {
 
                 if($(this).val() == 'yes'){
@@ -146,27 +124,27 @@ define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
                     $("input[name='result.stintOccupy']").val("0");
                 }
             });
-            _this.getSubInfo($("select[name='result.ownerId']").val());
+            _this.getSubInfo($("select[name='result.ownerId']").val(),$("input[name='result.userType']").val());
         },
 
         //獲取上級資料
-        getSubInfo : function(userId){
+        getSubInfo : function(userId,userType){
+            if(userId){
+                $.ajax({
+                    loading: true,
+                    url: root + "/vSiteUser/getSubInfo.html",
+                    type: "post",
+                    dataType:"JSON",
+                    data:{"search.id":userId,"search.userType":userType},
+                    success: function (data) {
+                        $("#shareCredits").text(data.shareCredits);
+                        $("#superStintOccupy").val(data.superiorOccupy);
+                    },
+                    error: function (data, state, msg) {
 
-            $.ajax({
-                loading: true,
-                url: root + "/vSiteUser/getSubInfo.html",
-                type: "post",
-                dataType:"JSON",
-                data:{"search.id":userId},
-                success: function (data) {
-                    $("#shareCredits").text(data.shareCredits);
-                    $("#superStintOccupy").val(data.superiorOccupy);
-                },
-                error: function (data, state, msg) {
-
-                }
-            });
-
+                    }
+                });
+            }
             var superCredit = $("select[name='shareName']").find("option:selected").data("credit");
             $("#shareCredits").text(superCredit);
 
