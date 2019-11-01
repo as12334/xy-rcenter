@@ -1,11 +1,8 @@
-define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
-
+define(['common/BaseEditPage'], function (BaseEditPage) {
     return BaseEditPage.extend({
         init: function () {
             this.formSelector = "#editUserForm";
-            this._super(this.formSelector);
-            this.bindEvent();
-            this.onPageLoad();
+            this._super();
         },
         /**
          * 当前对象事件初始化
@@ -13,19 +10,27 @@ define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
         bindEvent: function () {
             this._super();
             var _this = this;
+            $(_this.formSelector).on("change","input[name='result.ownerUserType']",function () {
 
-        },
-        onPageLoad: function () {
-            this._super();
-            var _this = this;
+                var href = "/vSiteUser/createUser/"+$("input[name='result.userType']").val()+".html?search.ownerUserType="+$(this).val();
+                $.ajax({
+                    loading: true,
+                    url: root + href,
+                    type: "post",
+                    success: function (data) {
+                        //解绑原有事件
+                        $(_this.formSelector).unbind();
+                        $("#mainFrame").html(data);
+                    },
+                    error: function (data, state, msg) {
+                        //超时导致后台返回,安全密码验证不做任何处理
+
+                    }
+                });
+            });
             $(_this.formSelector).on("change","select[name='set_water']",function () {
 
                 $("input[name='water']").val($(this).val());
-            });
-
-            $(_this.formSelector).on("click",".myLayerCancel",function () {
-
-                $(".navListBox .onBtn").click();
             });
 
             $(_this.formSelector).on("change","select[name='result.ownerId']",function () {
@@ -42,6 +47,12 @@ define(['common/BaseEditPage', 'bootstrapswitch'], function (BaseEditPage) {
                     $("input[name='result.stintOccupy']").val("0");
                 }
             });
+
+
+        },
+        onPageLoad: function () {
+            this._super();
+            var _this = this;
             _this.getSubInfo($("select[name='result.ownerId']").val(),$("input[name='result.userType']").val());
         },
 

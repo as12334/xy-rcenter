@@ -2,9 +2,7 @@ define(['common/BaseListPage'],function (BaseListPage) {
     return BaseListPage.extend({
         init: function () {
             this.formSelector = "#mainFrame";
-            this._super(this.formSelector);
-            this.bindEvent();
-            this.onPageLoad();
+            this._super();
         },
         /**
          * 当前对象事件初始化
@@ -17,9 +15,6 @@ define(['common/BaseListPage'],function (BaseListPage) {
                 $.ajax({
                     loading: true,
                     url: root + url,
-                    // headers: {
-                    //     "Soul-Requested-With": "XMLHttpRequest"
-                    // },
                     type: "post",
                     success: function (data) {
                         $(".search-list-container").html(data);
