@@ -35,7 +35,7 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
 
             $(_this.formSelector).on("change","select[name='result.ownerId']",function () {
 
-                _this.getSubInfo($(this).val(),$("input[name='result.userType']").val());
+                _this.getSubInfo(null,$("input[name='result.userType']").val(),$(this).val());
             });
             $(_this.formSelector).on("change","input[name='stintId']",function () {
 
@@ -53,27 +53,27 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
         onPageLoad: function () {
             this._super();
             var _this = this;
-            _this.getSubInfo($("select[name='result.ownerId']").val(),$("input[name='result.userType']").val());
+            _this.getSubInfo($("select[name='result.id']").val(),$("input[name='result.userType']").val(),$("[name='result.ownerId']").val());
         },
 
         //獲取上級資料
-        getSubInfo : function(userId,userType){
-            if(userId){
+        getSubInfo : function(userId,userType,ownerId){
                 $.ajax({
                     loading: true,
                     url: root + "/vSiteUser/getSubInfo.html",
                     type: "post",
                     dataType:"JSON",
-                    data:{"search.id":userId,"search.userType":userType},
+                    data:{"search.id":userId,"search.userType":userType,"search.ownerId":ownerId},
                     success: function (data) {
                         $("#shareCredits").text(data.shareCredits);
                         $("#superStintOccupy").val(data.superiorOccupy);
+                        $("#maxSuperiorOccupy").text(100 - data.maxSuperiorOccupy);
+                        $("input[name='maxSuperiorOccupy']").val(100 - data.maxSuperiorOccupy);
                     },
                     error: function (data, state, msg) {
 
                     }
                 });
-            }
             var superCredit = $("select[name='shareName']").find("option:selected").data("credit");
             $("#shareCredits").text(superCredit);
 
@@ -83,9 +83,9 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
 
         saveValid: function (e) {
             var _this=this;
-            if(!this.validateForm(e)){
-                return false;
-            }
+            // if(!this.validateForm(e)){
+            //     return false;
+            // }
             window.top.topPage.ajax({
                 url: root+"/vSiteUser/saveManagerUser.html",
                 async:false,
@@ -116,6 +116,21 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                 error: function (e) {
                 }
             });
+        },
+        test :function () {
+            var tabName = $(".game_box_title .active a").text();
+            $("fieldset").each(function () {
+                var first = $(this).find("legend").text();
+                $(this).find("li").each(function () {
+                    var name = $(this).data("name");
+                    var bid  = $(this).data("bid");
+                    var str = "INSERT INTO test ( tyep, name, bet_code, bet_num) VALUES ('"+tabName+"' '"+first+"','第一球', '"+name+"', '"+bid.split("_")[0]+"', '"+bid.split('_')[1]+"');";
+                    console.log(str);
+
+                })
+
+            })
+
         }
     })
 });
