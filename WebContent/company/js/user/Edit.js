@@ -53,7 +53,7 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
         onPageLoad: function () {
             this._super();
             var _this = this;
-            _this.getSubInfo($("select[name='result.id']").val(),$("input[name='result.userType']").val(),$("[name='result.ownerId']").val());
+            _this.getSubInfo($("[name='result.id']").val(),$("input[name='result.userType']").val(),$("[name='result.ownerId']").val());
         },
 
         //獲取上級資料
@@ -124,7 +124,7 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                 $(this).find("li").each(function () {
                     var name = $(this).data("name");
                     var bid  = $(this).data("bid");
-                    var str = "INSERT INTO test ( tyep, name, bet_code, bet_num) VALUES ('"+tabName+"' '"+first+"','第一球', '"+name+"', '"+bid.split("_")[0]+"', '"+bid.split('_')[1]+"');";
+                    var str = "INSERT INTO test ( play_name, name, bet_code, bet_num, code) VALUES ('"+first+"','"+name+"', '"+bid.split("_")[0]+"', '"+bid.split('_')[1]+"','cqssc');";
                     console.log(str);
 
                 })
