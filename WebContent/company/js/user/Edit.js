@@ -83,9 +83,9 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
 
         saveValid: function (e) {
             var _this=this;
-            // if(!this.validateForm(e)){
-            //     return false;
-            // }
+            if(!this.validateForm(e)){
+                return false;
+            }
             window.top.topPage.ajax({
                 url: root+"/vSiteUser/saveManagerUser.html",
                 async:false,

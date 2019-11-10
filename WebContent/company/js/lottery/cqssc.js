@@ -24,27 +24,14 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
          * @param e
          */
         saveLotteryOdd: function (e, option) {
-            var siteId = $("#search_id").val();
-            if (!siteId) {
-                e.page.showPopover(e, option, 'danger', '站点id不能为空', true);
-                $(e.currentTarget).unlock();
-                return;
-            }
-            var code = $("#searchDiv a.ssc-active").attr("code");
-            var $form = $(this.getCurrentForm(e));
             var $target = $(e.currentTarget);
-            var validate = $form.validate();
             var array = [];
-            var group;
-            var oddObj;
-            var $input;
-            var odd;
-            var ori;
             var obj;
-            var limit;
             var data = {};
-            var rebateObj;
-
+            if(!this.validateForm(e)){
+                $target.unlock();
+                return false;
+            }
 
             var code = $("#lotteryCode").val();
             $(".betSortTr").each(function () {
@@ -69,7 +56,7 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                 return;
             }
             var url = root + "/siteLotteryOdds/saveSiteLotteryOdds.html";
-            data['lotteryOddJson'] = JSON.stringify(array);
+            data['lotteryOddsJson'] = JSON.stringify(array);
             window.top.topPage.ajax({
                 url: url,
                 data: data,
@@ -82,7 +69,6 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                     } else {
                         e.page.showPopover(e, option, 'danger', '保存失败', true);
                     }
-                    $target.unlock();
                 }
             });
         }
