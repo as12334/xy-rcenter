@@ -17,7 +17,24 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                     $(this).parent().parent("tr").removeClass("myqhs");
                 }
             });
-
+            //选中彩种
+            $(this.formSelector).on("change", "#lotteryCode", function () {
+                var code = $(this).val();
+                window.top.topPage.ajax({
+                    url: root+"/siteLotteryOdds/set/"+code+".html",
+                    async:false,
+                    headers: {
+                        "Soul-Requested-With": "XMLHttpRequest"
+                    },
+                    dataType:'html',
+                    success: function (data) {
+                        $("#oddEditPartial").html(data);
+                    },
+                    error: function (e ,state, msg) {
+                        console.log(e)
+                    }
+                });
+            });
 
             $(this.formSelector).on("click","#od-set .odds-kj span",function () {
                 var value = parseFloat($(this).html());
@@ -27,7 +44,7 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                 var od_max = $(_this.formSelector).find("input[name='od-max']").is(':checked');
                 var dow;
                 $(_this.formSelector).find("tbody tr.myqhs").each(function () {
-                    $(_this.formSelector).find("input[type='text']").each(function (i) {
+                    $(this).find("input[type='text']").each(function (i) {
                         dow = value + parseFloat($(this).val());
                         if (i == 0) {
                             if (od_a && dow >= 0) {
@@ -57,6 +74,7 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                     });
                 });
             });
+
         },
 
             //快捷設置賠率
