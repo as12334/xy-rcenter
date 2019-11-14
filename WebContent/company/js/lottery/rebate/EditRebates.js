@@ -1,7 +1,7 @@
 define(['common/BaseEditPage'], function (BaseEditPage) {
     return BaseEditPage.extend({
         init: function () {
-            this.formSelector = "#edidOddForm";
+            this.formSelector = "#edidRebateForm";
             this._super();
         },
         /**
@@ -10,70 +10,55 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
         bindEvent: function () {
             this._super();
             var _this = this;
-            $(this.formSelector).on("change", "td input[type='checkbox']", function () {
-                if ($(this).is(':checked')) {
-                    $(this).parent().parent("tr").addClass("myqhs");
-                } else {
-                    $(this).parent().parent("tr").removeClass("myqhs");
-                }
-            });
-            //选中彩种
-            $(this.formSelector).on("change", "#lotteryCode", function () {
-                var code = $(this).val();
-                window.top.topPage.ajax({
-                    url: root+"/siteLotteryOdds/set/"+code+".html",
-                    async:false,
-                    headers: {
-                        "Soul-Requested-With": "XMLHttpRequest"
-                    },
-                    dataType:'html',
-                    success: function (data) {
-                        $("#oddEditPartial").html(data);
-                    },
-                    error: function (e ,state, msg) {
-                        console.log(e)
-                    }
-                });
-            });
 
-            $(this.formSelector).on("click","#od-set .odds-kj span",function () {
-                var value = parseFloat($(this).html());
-                var od_a = $(_this.formSelector).find("input[name='od-a']").is(':checked');
-                var od_b = $(_this.formSelector).find("input[name='od-b']").is(':checked');
-                var od_c =$(_this.formSelector).find("input[name='od-c']").is(':checked');
-                var od_max = $(_this.formSelector).find("input[name='od-max']").is(':checked');
-                var dow;
-                $(_this.formSelector).find("tbody tr.myqhs").each(function () {
-                    $(this).find("input[type='text']").each(function (i) {
-                        dow = value + parseFloat($(this).val());
-                        if (i == 0) {
-                            if (od_a && dow >= 0) {
-                                $(this).val(_this.forDight(dow, 4));
-                            } else if (od_a) {
-                                $(this).val("0");
-                            }
-                        } else if (i == 1) {
-                            if (od_b && dow >= 0) {
-                                $(this).val(_this.forDight(dow, 4));
-                            } else if (od_b) {
-                                $(this).val("0");
-                            }
-                        } else if (i == 2) {
-                            if (od_c && dow >= 0) {
-                                $(this).val(_this.forDight(dow, 4));
-                            } else if (od_c) {
-                                $(this).val("0");
-                            }
-                        } else if (i == 3) {
-                            if (od_max && dow >= 0) {
-                                $(this).val(_this.forDight(dow, 4));
-                            } else if (od_max) {
-                                $(this).val("0");
-                            }
-                        }
+            $(this.formSelector).on("click",".btnBS",function () {
+                var sid = $(this).attr("data-sid");
+                var btr = $(this).parent().parent();
+                var arrT = ['a', 'b', 'c', 'd', 'e', 'f'];
+                $.each(arrT, function (i, t) {
+                    $(_this.formSelector).find("table[name='data-content'] tr[data-sid=" + sid + "] input[data-" + t + "='']").each(function () {
+                        $(this).val($(btr).find("input[data-" + t + "='']").val());
                     });
                 });
             });
+
+
+            $(this.formSelector).on("click","em.addBtns",function () {
+                var av = parseFloat($(_this.formSelector).find("#kc_plwt").val()) * 100;
+                $(_this.formSelector).find("table[name='data-content'] input[data-a=''],table[name='data-content'] input[data-b=''],table[name='data-content'] input[data-c='']").each(function () {
+                    var v = $(this).val();
+                    var v0 = isNaN(v) ? 0 : parseFloat(v) * 100;
+                    $(this).val(_this._f2((v0 + av) / 100));
+                });
+            });
+            $(this.formSelector).on("click","i.minBtns",function () {
+                var sv = parseFloat($(_this.formSelector).find("#kc_plwt").val()) * 100;
+                $(_this.formSelector).find("table[name='data-content'] input[data-a=''],table[name='data-content'] input[data-b=''],table[name='data-content'] input[data-c='']").each(function () {
+                    var v = $(this).val();
+                    var v0 = isNaN(v) ? 0 : parseFloat(v) * 100;
+                    $(this).val(v0 - sv > 0 ? _this._f2((v0 - sv) / 100) : 0);
+                });
+            });
+
+            // obj.find("em.addBtns").unbind("click").click(function () {
+            //     var av = parseFloat(obj.find("#kc_plwt").val()) * 100;
+            //     obj.find("table[name='data-content'] input[data-a=''],table[name='data-content'] input[data-b=''],table[name='data-content'] input[data-c='']").each(function () {
+            //         var v = $(this).val();
+            //         var v0 = isNaN(v) ? 0 : parseFloat(v) * 100;
+            //         $(this).val(_f2((v0 + av) / 100));
+            //     });
+            // });
+            //
+            // obj.find("i.minBtns").unbind("click").click(function () {
+            //     var sv = parseFloat(obj.find("#kc_plwt").val()) * 100;
+            //     obj.find("table[name='data-content'] input[data-a=''],table[name='data-content'] input[data-b=''],table[name='data-content'] input[data-c='']").each(function () {
+            //         var v = $(this).val();
+            //         var v0 = isNaN(v) ? 0 : parseFloat(v) * 100;
+            //         $(this).val(v0 - sv > 0 ? _f2((v0 - sv) / 100) : 0);
+            //     });
+            // });
+
+
 
         },
 
@@ -83,7 +68,24 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
             this._super();
             var _this = this;
         },
-
+        _f2 : function (v) {
+        var v1 = v + "";
+        if (v1.indexOf('.') >= 0) {
+            var v2 = v1.substring(0, v1.indexOf('.') + 3);
+            var i = 0;
+            while (i < 3) {
+                var pi = v2.substring(v2.length - 1, v2.length);
+                if (pi != "0" && pi != ".") {
+                    break;
+                }
+                v2 = v2.substring(0, v2.length - 1);
+                i++;
+            }
+            return v2;
+        } else {
+            return v1;
+        }
+    },
 
         /**
          * 保存赔率
