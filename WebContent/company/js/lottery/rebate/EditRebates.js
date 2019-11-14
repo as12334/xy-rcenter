@@ -39,27 +39,6 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                     $(this).val(v0 - sv > 0 ? _this._f2((v0 - sv) / 100) : 0);
                 });
             });
-
-            // obj.find("em.addBtns").unbind("click").click(function () {
-            //     var av = parseFloat(obj.find("#kc_plwt").val()) * 100;
-            //     obj.find("table[name='data-content'] input[data-a=''],table[name='data-content'] input[data-b=''],table[name='data-content'] input[data-c='']").each(function () {
-            //         var v = $(this).val();
-            //         var v0 = isNaN(v) ? 0 : parseFloat(v) * 100;
-            //         $(this).val(_f2((v0 + av) / 100));
-            //     });
-            // });
-            //
-            // obj.find("i.minBtns").unbind("click").click(function () {
-            //     var sv = parseFloat(obj.find("#kc_plwt").val()) * 100;
-            //     obj.find("table[name='data-content'] input[data-a=''],table[name='data-content'] input[data-b=''],table[name='data-content'] input[data-c='']").each(function () {
-            //         var v = $(this).val();
-            //         var v0 = isNaN(v) ? 0 : parseFloat(v) * 100;
-            //         $(this).val(v0 - sv > 0 ? _f2((v0 - sv) / 100) : 0);
-            //     });
-            // });
-
-
-
         },
 
             //快捷設置賠率
@@ -91,7 +70,7 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
          * 保存赔率
          * @param e
          */
-        saveLotterysOdd: function (e, option) {
+        saveLotteryRebate: function (e, option) {
             var $target = $(e.currentTarget);
             var array = [];
             var obj;
@@ -101,20 +80,24 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                 return false;
             }
 
-            var code = $("#lotteryCode").val();
             $(".betSortTr").each(function () {
+                var code = $(this).find("input[name='code']").val();
                 var betSort = $(this).find("input[name='betSort']").val();
-                var oddA = $(this).find("input[name='oddA']").val();
-                var oddB = $(this).find("input[name='oddB']").val();
-                var oddC = $(this).find("input[name='oddC']").val();
-                var maxOdd = $(this).find("input[name='maxOdd']").val();
+                var minBet = $(this).find("input[name^='minBet']").val();
+                var maxBet = $(this).find("input[name^='maxBet']").val();
+                var maxExpectBet = $(this).find("input[name^='maxExpectBet']").val();
+                var rebateA = $(this).find("input[name^='rebateA']").val();
+                var rebateB = $(this).find("input[name^='rebateB']").val();
+                var rebateC = $(this).find("input[name^='rebateC']").val();
                 obj = {
                     'code': code,
                     'betSort': betSort,
-                    'oddA': oddA,
-                    'oddB': oddB,
-                    'oddC': oddC,
-                    'maxOdd': maxOdd
+                    'minBet': minBet,
+                    'maxBet': maxBet,
+                    'maxExpectBet': maxExpectBet,
+                    'rebateA': rebateA,
+                    'rebateB': rebateB,
+                    'rebateC': rebateC
                 };
                 array.push(obj);
             });
@@ -123,8 +106,9 @@ define(['common/BaseEditPage'], function (BaseEditPage) {
                 $target.unlock();
                 return;
             }
-            var url = root + "/siteLotteryOdds/saveSiteLotteryOdds.html";
-            data['lotteryOddsJson'] = JSON.stringify(array);
+            var url = root + "/siteLotteryRebates/saveSiteLotteryRebates.html";
+            data['lotteryRebatesJson'] = JSON.stringify(array);
+            $target.unlock();
             window.top.topPage.ajax({
                 url: url,
                 data: data,
