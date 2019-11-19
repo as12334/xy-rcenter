@@ -1,12 +1,13 @@
 ﻿seajs.config({
-	'base':'/Scripts',
+	'base': resRoot + '/js',
 	'alias':{
-		'jquery':'jquery-1.10.2',
+		'jquery': 'plugin/jquery-1.10.2',
+        'myLayer': 'plugin/myLayer',
 		'juicer': 'juicer-min',
 		'json2': 'json2',
 		'tips': 'tips',
 		'getBaseDataAjax': 'getBaseDataAjax',
-		'myLayer': 'myLayer',
+
 		'checkPwd': 'checkPwd',
 		'Bet': 'Bet',
 		'reportCurrentphase': 'reportCurrentphase',

@@ -30,6 +30,7 @@ curl = {
         FancyZoom: resRoot + '/themes/' + curTheme + '/js/FancyZoom',
         FancyZoomHTML: resRoot + '/themes/' + curTheme + '/js/FancyZoom',
         jquery: resRoot + '/js/plugin/jquery.min',
+        myLayer: resRoot + '/js/plugin/myLayer',
         scrollanim: resRoot + '/js/plugin/scrollanim.min',
         moment : {
             location: 'bootstrap-daterangepicker/moment'
