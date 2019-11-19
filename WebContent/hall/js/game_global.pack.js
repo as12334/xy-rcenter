@@ -729,7 +729,19 @@ define('getBaseDataAjax',['jquery','tips','json2'],function(require, exports, mo
 
 define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','jquery'],function(require, exports, module) {
 	// 引入排序
-	// 
+	//
+
+
+    juicer.set({
+        'tag::operationOpen': '{@',
+        'tag::operationClose': '}',
+        'tag::interpolateOpen': '&{',
+        'tag::interpolateClose': '}',
+        'tag::noneencodeOpen': '&&{',
+        'tag::noneencodeClose': '}',
+        'tag::commentOpen': '{#',
+        'tag::commentClose': '}'
+    })
 	var textIndex = 0;
 	// 上次下单对象
 	var lastLmData = [];
@@ -1220,7 +1232,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		oddsLoadAjax: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'Handler/Handler.ashx',
+				url: 'Handler/Handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: optionsData('odds'),
@@ -1672,7 +1684,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		rankList: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'Handler/Handler.ashx',
+				url: 'Handler/Handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -1768,7 +1780,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			if ( _this.pourlock ) {
 				_this.pourlock = 0;
 				var b = new getBaseDataAjax({
-					url: 'Handler/Handler.ashx',
+					url: 'Handler/Handler.html',
 					_type: 'POST',
 					dataType: 'json',
 					postData: optionsData('order'),
@@ -1913,7 +1925,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		putinfo: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'Handler/Handler.ashx',
+				url: 'Handler/Handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -2070,7 +2082,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		openball: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'Handler/Handler.ashx',
+				url: 'Handler/Handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
