@@ -3,7 +3,8 @@
 	'alias':{
 		'jquery': 'plugin/jquery-1.10.2',
         'myLayer': 'plugin/myLayer',
-		'juicer': 'juicer-min',
+        'dialog': 'plugin/dialog/dialog-plus',
+        'juicer': 'juicer-min',
 		'json2': 'json2',
 		'tips': 'tips',
 		'getBaseDataAjax': 'getBaseDataAjax',
@@ -14,7 +15,6 @@
 		'LoginValidate': 'LoginValidate',
 		'login': 'login',
 		'layer': 'layer/layer',
-		'dialog': 'dialog-plus',
 		'gameHall': 'gameHall',
 		'global': 'global'
 	},

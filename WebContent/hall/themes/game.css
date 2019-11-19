@@ -1,0 +1,626 @@
+/* 快彩 广东快乐十分 两面盘 */
+.game_box{
+	margin-bottom:3px; 
+}
+.game_box .game_title{
+	float: left;
+	width: 23px;
+	padding: 6px 0;
+	border: 1px solid #d0ddec;
+	border-right: none;
+	text-align: center;
+	background: #d0ddec;
+	-moz-border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+
+.game_box .game_con,.game_box .game_con1{
+	float: left;
+	width:865px;
+}
+
+.game_box .game_con ul,.game_box .game_con ul{
+	width: 858px;
+}
+.game_box .game_con li{
+	float: left;
+	width: 210px;
+	padding: 1px 0px 1px 0px;
+	margin-right:3px;
+	margin-top: 2px;
+	height: 27px
+}
+.li_col5{_width: 155px!important;}
+.li_col4{_width: 200px!important;}
+.li_col3{_width: 250px!important;}
+.game_box .game_con li span{
+	vertical-align: middle;
+	display: inline-block;
+	margin-left:5px;
+	_margin-left:0px;
+}
+.game_box .game_con li span.name {
+	width: 60px;
+	_width: 50px;
+	text-align: center;
+	text-align: right;
+}
+.game_box .game_con li span.p{
+	width: 55px;
+	text-align: center;
+	font-size: 12px;
+	color: #e64100;
+	font-weight: bold;
+	font-family:Verdana,"宋体",Arial,Sans;
+}
+.game_box .game_con li span.p a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+.game_box .game_con li span.in{
+	width: 64px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+}
+.game_box .game_con li span a {
+	display: inline-block;
+	font-size: 12px;
+	color: #e64100;
+	font-weight: bold;
+	font-family:Verdana,"宋体",Arial,Sans;
+}
+.game_box .game_con li span a:hover{
+	text-decoration: underline;
+}
+
+.game_box .game_con1 li{
+	float: left;
+	width: 850px;
+	padding: 1px 0px 1px 0px;
+	margin-right:3px;
+	margin-top: 2px;
+	height: 27px
+}
+.game_box .game_con1 td span{
+	vertical-align: middle;
+	display: inline-block;
+	margin-left:5px;
+}
+.game_box .game_con1 td span.name {
+	width: 36px;
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	text-align: right;
+}
+.game_box .game_con1 td span.p{
+	width: 70px;
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+}
+.game_box .game_con1 td span.p a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+.game_box .game_con1 td span.in{
+	width: 80px;
+	height: 24px;
+	line-height: 24px;
+	float: left;
+}
+.game_box .game_con1 td .box{
+	float: left;
+}
+.game_box .game_con1 td span a {
+	display: inline-block;
+	font-size: 12px;
+	color: #e64100;
+	font-weight: bold;
+	font-family:Verdana,"宋体",Arial,Sans;
+}
+.game_box .game_con1 td span a:hover{
+	text-decoration: underline;
+}
+
+.game_ball_wrap .game_box{
+	float: left;
+	padding-left: 5px
+}
+.game_ball_wrap .game_box .game_con_s {
+	width: 212px;
+	border-right: none;
+}
+.game_ball_wrap .game_box .game_con_s ul{
+	width: 210px;
+}
+.game_ball_wrap .game_box .game_con_s li{
+	width: 210px;
+}
+.game_lm_title{
+	_padding:0 5px 5px 5px;padding:5px;
+}
+
+.game_lm_title li h2{
+	font-size: 12px;
+	font-weight: normal;
+}
+.game_lm_title li h3{
+	font-size: 12px;
+	font-weight: normal;
+}
+.game_lm_title li h3 span, .game_lm_title li h4 span{
+	display: inline-block;
+	margin: 0 2px;
+	width: 50px;
+}
+.game_lm_title li h4{
+	margin-top: 2px;
+	font-size: 14px;
+	color: #e64100;
+	font-family:Verdana,"宋体",Arial,Sans;
+}
+
+.game_lm_title li.active h4{
+	color: #fff;
+}
+.game_lm_con .game_con li{
+	width: 190px;
+	margin-left: 20px;
+}
+.game_lm_con_s .game_con li{
+	width: 180px;
+}
+.game_lm_con_nop .game_con li{
+	width: 83px;
+}
+.game_lm_con_nop .game_box .game_con li span.in{
+	width: 30px;
+}
+.game_lm_con .game_box .game_con{
+	border-bottom: none;
+	border-right: none;
+}
+.game_lm_con_nop .game_box .game_con{
+	overflow: hidden;
+}
+.game_lm_con .ball{
+	padding: 2px;
+}
+
+.six_title{
+	padding:5px;
+}
+.six_title dl{
+	border: 1px solid #b5c7dc;
+	background: #e8f1ff;
+	background-image:-webkit-linear-gradient(to top, #e8f1ff, #ffffff);
+	background-image:linear-gradient(to top , #e8f1ff, #ffffff);
+}
+.six_title dd{
+	float: left;
+	padding:6px 10px;
+	text-align: center;	
+	background: #e8f1ff;
+	background-image:-webkit-linear-gradient(to top, #e8f1ff, #ffffff);
+	background-image:linear-gradient(to top , #e8f1ff, #ffffff);
+	border-right: 1px solid #b5c7dc;
+	border-left: none;
+}
+.six_title dd h3{
+	font-size: 12px;
+	font-weight: normal;
+	cursor: pointer;
+}
+.six_title dd.active{
+	color: #fff;
+	background: #5aa6db;
+	background-image: -webkit-linear-gradient(to top, #5aa6db, #237ab7);
+	background-image: linear-gradient(to top , #5aa6db, #237ab7);
+	border-right: 1px solid #5aa6db;
+	border-left: none;
+}
+.six_title dt{
+	float: right;
+	padding: 10px;
+	text-align: center;	
+	background: #e8f1ff;
+	background-image:-webkit-linear-gradient(to top, #e8f1ff, #ffffff);
+	background-image:linear-gradient(to top , #e8f1ff, #ffffff);
+	border-left: 1px solid #b5c7dc;
+	border-right: none;
+	cursor: pointer;
+}
+.six_title dt h3{
+	font-size: 12px;
+	font-weight: normal;
+}
+.six_title dt:hover{
+	background: #fff;
+}
+.six_title dd h4{
+	color: #e64100;
+	cursor: pointer;
+}
+.six_title dd.active h4{
+	color: #fff
+}
+.six_title dd h4 span, .six_title dd h3 span{
+	display: inline-block;
+	width: 45px;
+	margin: 0 2px;
+	text-align: center;
+}
+.six_title dd h2{
+	font-size: 12px;
+}
+.game_lm_con_b .game_con li{
+	width: 49.5%;
+	border-bottom: 1px solid #d0ddec;
+}
+.game_lm_con_b .game_con li strong{
+	display: inline-block;
+	vertical-align: middle;
+	width: 170px;
+}
+.game_lm_con_b .game_con li span.name{
+	width: 30px;
+}
+.six_lm .game_box .game_con li span.in{
+	width: 30px;
+}
+.six_lm .game_box .game_con li span.p{
+	width: 90px;
+}
+.game_lm_con_cb .game_con li{
+	width: 100%;
+	border-bottom: 1px solid #d0ddec;
+}
+.game_lm_con_cb .game_con li strong{
+	display: inline-block;
+	vertical-align: middle;
+	width: 320px;
+}
+.lx dd{
+	padding: 5px;
+	height: 42px;
+}
+.lx dd.lxyz{
+	padding-top: 10px;
+	height: 37px;
+}
+.col_1{
+	float: left;
+	width: 168px;
+}
+.col_1 .game_con{
+	width: 168px;
+}
+.col_1 .game_con li span.name{
+	float: none;
+	width: 27px;
+}
+.col_1 .game_con ul{
+	width: 168px;
+}
+.col_33{
+	float: left;
+	width: 284px;
+}
+.col_33 .game_con{
+	width: 284px;
+}
+.col_33 .game_con li span.name{
+	float: none;
+	width: 60px;
+}
+.col_33 .game_con li span.p{
+	float: none;
+	width: 100px;
+}
+.col_33 .game_con ul,.col_33 .game_con li{
+	width: 284px;
+}
+.col_2 .game_con1 li{
+	width: 400px;
+	padding: 0 26px;
+}
+.col_3 .game_con li span.name{
+	float: none;
+	width: 60px;
+}
+.col_3 .game_con li{
+	width: 230px;
+	padding: 0 26px;
+}
+.col_5 .game_con li span.name{
+	float: none;
+	width: 30px;
+	font-family:Verdana,"宋体",Arial,Sans;
+}
+.col_5 .game_con li{
+	width: 168px;
+}
+.col_10 .game_con li span.name{
+	float: none;
+	width: 27px;
+}
+.col_10 .game_con li span.in{
+	width: 24px;
+}
+.col_10 .game_con li{
+	width: 82px;
+}
+.col_8 .game_con li span.name{
+	float: none;
+	width: 27px;
+}
+.col_8 .game_con li span.in{
+	width: 24px;
+}
+.col_8 .game_con li{
+	width: 102px;
+}
+
+#gameLmBox dd{
+	display: none;
+}
+#gameLmBox dd.active{
+	display: block;
+}
+#gameSixLmBox dd{
+	display: none;
+}
+#gameSixLmBox dd.active{
+	display: block;
+}
+.col_3_3 .game_con li span.name{
+	float: none;
+	width: 82px;
+}
+.col_3_3 .game_con li span.name span{
+	margin: 0
+}
+.col_3_3 .game_con li{
+	width: 230px;
+	padding: 0 26px;
+}
+
+.game_ball_wrap td.game_box{
+	float: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.pk10 span.name.No_01, 
+ul.pk10 span.name.No_02, 
+ul.pk10 span.name.No_01, 
+ul.pk10 span.name.No_03, 
+ul.pk10 span.name.No_04,
+ul.pk10 span.name.No_05, 
+ul.pk10 span.name.No_06, 
+ul.pk10 span.name.No_07, 
+ul.pk10 span.name.No_08, 
+ul.pk10 span.name.No_09, 
+ul.pk10 span.name.No_10{
+	width: 27px;
+	margin-left: 38px;
+}
+
+ul.jsft2 span.name.No_01, 
+ul.jsft2 span.name.No_02, 
+ul.jsft2 span.name.No_01, 
+ul.jsft2 span.name.No_03, 
+ul.jsft2 span.name.No_04,
+ul.jsft2 span.name.No_05, 
+ul.jsft2 span.name.No_06, 
+ul.jsft2 span.name.No_07, 
+ul.jsft2 span.name.No_08, 
+ul.jsft2 span.name.No_09, 
+ul.jsft2 span.name.No_10{
+	width: 27px;
+	margin-left: 38px;
+}
+
+ul.xyft5 span.name.No_01, 
+ul.xyft5 span.name.No_02, 
+ul.xyft5 span.name.No_01, 
+ul.xyft5 span.name.No_03, 
+ul.xyft5 span.name.No_04,
+ul.xyft5 span.name.No_05, 
+ul.xyft5 span.name.No_06, 
+ul.xyft5 span.name.No_07, 
+ul.xyft5 span.name.No_08, 
+ul.xyft5 span.name.No_09, 
+ul.xyft5 span.name.No_10{
+	width: 27px;
+	margin-left: 38px;
+}
+ul.pcdd span.name.No_0, 
+ul.pcdd span.name.No_1,
+ul.pcdd span.name.No_2,
+ul.pcdd span.name.No_3,
+ul.pcdd span.name.No_4,
+ul.pcdd span.name.No_5,
+ul.pcdd span.name.No_6,
+ul.pcdd span.name.No_7,
+ul.pcdd span.name.No_8,
+ul.pcdd span.name.No_9,
+ul.pcdd span.name.No_10,
+ul.pcdd span.name.No_11,
+ul.pcdd span.name.No_12,
+ul.pcdd span.name.No_13,
+ul.pcdd span.name.No_14,
+ul.pcdd span.name.No_15,
+ul.pcdd span.name.No_16,
+ul.pcdd span.name.No_17,
+ul.pcdd span.name.No_18,
+ul.pcdd span.name.No_19,
+ul.pcdd span.name.No_20,
+ul.pcdd span.name.No_21,
+ul.pcdd span.name.No_22,
+ul.pcdd span.name.No_23,
+ul.pcdd span.name.No_24,
+ul.pcdd span.name.No_25,
+ul.pcdd span.name.No_26,
+ul.pcdd span.name.No_27{
+	width: 27px;
+	margin-left: 38px;
+}
+ul.k3 span.name.No_1, 
+ul.k3 span.name.No_2, 
+ul.k3 span.name.No_1, 
+ul.k3 span.name.No_3, 
+ul.k3 span.name.No_4,
+ul.k3 span.name.No_5, 
+ul.k3 span.name.No_6{
+	width: 27px;
+	margin-left: 38px;
+}
+ul.k3_2 span.name, 
+ul.k3_2 span.name, 
+ul.k3_2 span.name, 
+ul.k3_2 span.name, 
+ul.k3_2 span.name,
+ul.k3_2 span.name, 
+ul.k3_2 span.name{
+	width: 54px!important;
+	margin-left: 11px;
+}
+
+.plUp{
+	background: url(../Images/BoxBg.png) 112px -188px no-repeat;
+}
+.plDown{
+	background: url(../Images/BoxBg.png) -50px -188px no-repeat;
+}
+.zm16_title{
+	display: inline-block;
+	width: 35px;
+	height: 27px;
+	line-height: 23px;
+}
+.zm1_6 span{
+	display: inline-block;
+	width:100%;
+}
+.zm1_6 .name{ 
+	display: none;
+}
+.zm1_6 .p{
+	width: 50%;
+	_width: 49%;
+	text-align: center;
+}
+.zm1_6 .p a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+.zm16_title{
+	width: 100%;
+}
+.zm1_6 .in{
+	width: 50%;
+	text-align: center;
+}
+
+.game_box .pl2 li{
+	width: 170px;
+	margin-right: 1px;
+}
+.game_box .pl2 li span.name{
+	width: 27px;
+}
+.game_box .pl2 li span.p{
+	width: 100px;
+	margin-left: 0px;
+}
+.game_box .pl2 li span.in{
+	width: 24px
+}
+.game_box .z2 li{
+	width: 280px;
+	margin-right: 0
+}
+.game_box .z2 li span.name{
+	width: 30px;
+}
+.game_box .z2 li .No{
+	width: 180px;
+	margin-left: 5px
+}
+.game_box .z2 li .lxNo{
+	width: 135px;
+}
+.game_box .z2 li .No span{
+	margin-left: 0;
+}
+.game_box .z2 li a.p{
+	text-align: center;
+	width: auto;
+	color: #e64100;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.game_box .z2 li a.p:hover{
+	color: red;
+	cursor: pointer;
+}
+.game_box .z2 li span.p{
+	width: 55px;
+	color: #e64100;
+	font-size: 12px;
+	font-weight: bold;
+	font-family:Verdana,"宋体",Arial,Sans;
+}
+.game_box .z2 li span.in{
+	width: 30px;
+}
+.sixLXBtn h3{
+	padding-top: 10px
+}
+.sixLXBtn h4{
+	padding-bottom: 10px
+}
+.sixLxBtn2{
+	padding-top: 5px;
+}
+.active .sixLxBtn2{
+	color: #fff
+}
+
+.deleteIcon{
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: 24px;
+	margin: -2px auto;
+	background: url(../../Images/BoxBg.png) -195px -56px no-repeat;
+}
+.deleteIcon:hover{
+	background:url(../../Images/BoxBg.png) -285px -56px no-repeat;
+}
+.move{
+	cursor: move;
+}
+.disSubmit, .disSubmit:hover{
+	background: #d1d1d1;
+    background: #d1d1d1 linear-gradient(to top, #c4c4c4, #dcdcdc) repeat scroll 0 0;
+    border-bottom: 1px solid #a2a2a2;
+    color: #898989;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #f2f2f2;
+}
+
+#game_reload{
+	color: #e64100;
+	cursor: pointer;
+	display: inline-block;
+	padding: 2px;
+}

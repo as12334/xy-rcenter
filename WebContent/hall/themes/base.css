@@ -13,7 +13,7 @@
 }
 
 .mtip .micon {
-	background-image:url("../../images/micon.png");
+	background-image:url("images/micon.png");
 	background-repeat:no-repeat;
 	display:block;
 	width:38px;
@@ -66,7 +66,7 @@
 	display: none;
 }
 
-/*½±ÆÚµ¯´°*/
+/*ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½*/
 #reportTips{
 	background: #fff;
 }
@@ -90,7 +90,7 @@
     line-height: 26px;
     text-align: center;
     vertical-align: middle;
-    font-family: Verdana,"ËÎÌå",Arial,Sans;
+    font-family: Verdana,"ï¿½ï¿½ï¿½ï¿½",Arial,Sans;
     font-weight: normal;	
 }
 .lotcurrentphase .green{ border-bottom:1px dotted #038600;}

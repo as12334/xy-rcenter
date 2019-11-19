@@ -85,7 +85,7 @@ body{
 
 }
 .user_pic{
-    background: url(../../Images/micon.png) -1px -202px no-repeat;
+    background: url(../Images/micon.png) -1px -202px no-repeat;
 }
 .user_info p{
     color: #fff;
@@ -143,7 +143,7 @@ body{
     color:#e64100;
 }
 .menu a i{
-    background: url(../../Images/BoxBg.png) -363px -28px no-repeat;
+    background: url(../Images/BoxBg.png) -363px -28px no-repeat;
 }
 .menu div{
     border: 1px solid #cbbdbe;
@@ -154,10 +154,10 @@ body{
 }
 .menu div li a{
     border-bottom: 1px dotted #ddd0d1;
-    background: url(../../Images/BoxBg.png) 12px -57px no-repeat;
+    background: url(../Images/BoxBg.png) 12px -57px no-repeat;
 }
 .menu div li a:hover{
-    background: #f1e8e8 url(../../Images/BoxBg.png) 17px -57px no-repeat;
+    background: #f1e8e8 url(../Images/BoxBg.png) 17px -57px no-repeat;
 }
 .nav{
     border: 1px solid #c7b0b1;
@@ -436,16 +436,16 @@ body{
 }
 
 .skin_blue i{
-    background: url(../../Images/BoxBg.png) -180px -106px no-repeat;
+    background: url(../Images/BoxBg.png) -180px -106px no-repeat;
 }
 .skin_green i{
-    background: url(../../Images/BoxBg.png) -180px -160px no-repeat;
+    background: url(../Images/BoxBg.png) -180px -160px no-repeat;
 }
 .skin_red i{
-    background: url(../../Images/BoxBg.png) 0px -160px no-repeat;
+    background: url(../Images/BoxBg.png) 0px -160px no-repeat;
 }
 .skin_yellow i{
-    background: url(../../Images/BoxBg.png) 0px -106px no-repeat;
+    background: url(../Images/BoxBg.png) 0px -106px no-repeat;
 }
 #skinChange em a.on{
     background-color: #f6e1e4
@@ -676,7 +676,7 @@ legend{
     height: 7px;
     line-height: 7px;
     font-size: 0px;
-    background: url(../../Images/BoxBg.png) -2px -223px no-repeat;
+    background: url(../Images/BoxBg.png) -2px -223px no-repeat;
 }
 #myxTipsContent{
     padding: 4px;
@@ -1305,7 +1305,7 @@ li.lineActive{
 .kjBtn{
     border:1px solid #c0afb1;
     padding:2px 4px 2px 15px;
-    background:url(../../Images/BoxBg.png) 3px -62px no-repeat;
+    background:url(../Images/BoxBg.png) 3px -62px no-repeat;
     margin-left:11px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
