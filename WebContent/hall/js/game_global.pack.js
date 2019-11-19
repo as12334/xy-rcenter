@@ -1156,10 +1156,10 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			}
 			// if(!_this.gamePage.hasOwnProperty( _this.playpage )){
 				_this.ajaxobj = $.ajax({
-					url: '/Html/' +  _this.playpage  + '.txt',
+					url: root + '/html/' +  _this.playpage  + '.html',
 					type: 'GET',
 					cache: true,
-					dataType: "text",
+					dataType: "html",
 					timeout: 5000,
 					async: true,
 					complete: function(XMLHttpRequest, status){},
@@ -1232,7 +1232,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		oddsLoadAjax: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'Handler/Handler.html',
+				url: root + '/handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: optionsData('odds'),
@@ -1684,7 +1684,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		rankList: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'Handler/Handler.html',
+				url: root + '/handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -1780,7 +1780,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			if ( _this.pourlock ) {
 				_this.pourlock = 0;
 				var b = new getBaseDataAjax({
-					url: 'Handler/Handler.html',
+					url: root + '/handler/handler.html',
 					_type: 'POST',
 					dataType: 'json',
 					postData: optionsData('order'),
@@ -1925,7 +1925,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		putinfo: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'Handler/Handler.html',
+				url: root + '/handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -2082,7 +2082,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		openball: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'Handler/Handler.html',
+				url: root + '/handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
