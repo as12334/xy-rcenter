@@ -231,7 +231,7 @@
 			var that = this;
 
 			var b = new getBaseDataAjax({
-				url: '/Handler/QueryHandler.ashx',
+				url: root + '/Handler/QueryHandler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -405,7 +405,7 @@
 				$(this).addClass('on');
 				that.setFullPageLoading();
 				var b = new getBaseDataAjax({
-					url: '/Handler/QueryHandler.ashx',
+					url: root + '/Handler/QueryHandler.html',
 					_type: 'POST',
 					dataType: 'json',
 					postData: {
@@ -600,7 +600,7 @@
 			GameName = aA.html();
 			GamePath = aA.attr('data-url');
 			// Set Iframe Src
-			$("#mainIframe").attr('src', aA.attr('data-url') + '/index.aspx?lid=' + aA.attr('data-id') + '&path=' + aA.attr('data-url'));
+			$("#mainIframe").attr('src', aA.attr('data-url') + '/index.html?lid=' + aA.attr('data-id') + '&path=' + aA.attr('data-url'));
 			//Menu After Bind Nav Handlers
 			this.navHandlers();
 		},
