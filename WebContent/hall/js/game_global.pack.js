@@ -3828,7 +3828,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 					var that = $(this);
 					sum += Number(that.val());
 					aData["i_index"].push(index);
-					aData["oddsid"].push(that.attr('data-id').split('_')[1]);
+					aData["oddsid"].push(that.attr('data-id'));
 					aData["uPI_M"].push(that.val());
 					aData["uPI_P"].push(that.attr('data-pl'));
 				});

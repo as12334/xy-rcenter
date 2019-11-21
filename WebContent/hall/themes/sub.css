@@ -640,7 +640,7 @@ p.prWt span{
 }
 #putResult dt{
 	cursor: pointer;
-	background:url(../Images/BoxBg.png) no-repeat 164px -240px;
+	background:url(Images/BoxBg.png) no-repeat 164px -240px;
 }
 #putResult dd{
 	display: none;
