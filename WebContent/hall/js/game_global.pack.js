@@ -997,7 +997,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			// 给body增加球的样式
 			$("body").removeClass().addClass( p.GamePath );
 			// 设置当前彩种LOGO 从顶层获取
-			$("#game_logo").attr('src', p.LogoSrc);
+			$("#game_logo").attr('src', resRoot+ "/" + p.LogoSrc);
 			// 设置当前彩种Name 从顶层获取
 			$("#game_big_name").html( p.GameName );
 			// 设置当前玩法Name 从当前彩种index获取
@@ -2237,7 +2237,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 				case "L_K8SC":
 				case "L_PCDD":
 				case "L_PK10":
-				case "L_XYFT5":
+				case "xyft":
 				case "L_JSCAR":
 				case "L_SPEED5":
 				case "L_XYNC":
@@ -2265,7 +2265,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 				case "L_CQSC":
 				case "L_K8SC":
 				case "L_PK10":
-				case "L_XYFT5":
+				case "xyft":
 				case "L_JSCAR":
 				case "L_SPEED5":
 				case "L_K3":
