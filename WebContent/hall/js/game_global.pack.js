@@ -1232,7 +1232,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		oddsLoadAjax: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: root + '/handler/handler.html',
+				url: 'handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: optionsData('odds'),
@@ -1684,7 +1684,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		rankList: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: root + '/handler/handler.html',
+				url: 'handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -1780,7 +1780,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			if ( _this.pourlock ) {
 				_this.pourlock = 0;
 				var b = new getBaseDataAjax({
-					url: root + '/handler/handler.html',
+					url: 'handler/handler.html',
 					_type: 'POST',
 					dataType: 'json',
 					postData: optionsData('order'),
@@ -1925,7 +1925,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		putinfo: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: root + '/handler/handler.html',
+				url: 'handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -2083,7 +2083,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		openball: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: root + '/handler/handler.html',
+				url: 'handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -2133,9 +2133,9 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 				}
 				var IE = !-[1,];
 				if(IE){
-					soundObj.html("<embed src='../images/ClewSound.swf' loop=false autostart=false mastersound hidden=true width=0 height=0></embed>");
+					soundObj.html("<embed src= '../images/ClewSound.swf' loop=false autostart=false mastersound hidden=true width=0 height=0></embed>");
 				}else{
-					soundObj.html('<audio controls="controls" autoplay="autoplay" style="display:none"><source src="../images/ClewSound.ogg" type="audio/ogg"><source src="../images/ClewSound.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>');
+					soundObj.html('<audio controls="controls" autoplay="autoplay" style="display:none"><source src='+resRoot+'"/images/ClewSound.ogg" type="audio/ogg"><source src="../images/ClewSound.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>');
 				}				
 			}
 
