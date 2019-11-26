@@ -1232,7 +1232,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		oddsLoadAjax: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'handler/handler.html',
+				url: root + '/handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: optionsData('odds'),
@@ -1684,7 +1684,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		rankList: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'handler/handler.html',
+				url: root + '/handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -1780,7 +1780,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			if ( _this.pourlock ) {
 				_this.pourlock = 0;
 				var b = new getBaseDataAjax({
-					url: 'handler/handler.html',
+					url: root + '/handler/handler.html',
 					_type: 'POST',
 					dataType: 'json',
 					postData: optionsData('order'),
@@ -1925,7 +1925,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		putinfo: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'handler/handler.html',
+				url: root + '/handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
@@ -2059,6 +2059,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			//console.log(Number(NowJq.html()), Number($("#newPhase").text()));
 			if (Number(NowJq.html()) > (Number($("#newPhase").text()) + 1)) {
 				// _this.openball();
+                // this.postData.playpage = $(".game_box_title .active").attr("data-id");
 				_this.openBallByAd();
 			}else{
 				clearTimeout(_this.openballTimer);
@@ -2082,7 +2083,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		openball: function () {
 			var _this = this;
 			var b = new getBaseDataAjax({
-				url: 'handler/handler.html',
+				url: root + '/handler/handler.html',
 				_type: 'POST',
 				dataType: 'json',
 				postData: {
