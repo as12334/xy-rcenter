@@ -1324,8 +1324,8 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 					}
 					if( !isNaN(Number(oLi.attr('data-name'))) && !oLi.attr('data-text') ){
 						var numberBall = '';
-						// alert(p.GamePath != 'L_CQSC') 
-						if (p.GamePath != 'L_CQSC' && p.GamePath != 'L_K8SC' && p.GamePath != 'L_PCDD' && p.GamePath != 'L_K3' && p.GamePath != 'L_XJSC' && p.GamePath != 'L_TJSC' && p.GamePath != 'L_SPEED5' && p.GamePath != 'L_JSCQSC' && p.GamePath != 'L_SSC168' && p.GamePath != 'L_VRSSC') {
+						// alert(p.GamePath != 'cqssc')
+						if (p.GamePath != 'cqssc' && p.GamePath != 'L_K8SC' && p.GamePath != 'L_PCDD' && p.GamePath != 'L_K3' && p.GamePath != 'L_XJSC' && p.GamePath != 'L_TJSC' && p.GamePath != 'L_SPEED5' && p.GamePath != 'L_JSCQSC' && p.GamePath != 'L_SSC168' && p.GamePath != 'L_VRSSC') {
 							numberBall = (Number(oLi.attr('data-name'))<10?'0'+Number(oLi.attr('data-name')):Number(oLi.attr('data-name')));
 						}else{
 							numberBall = Number(oLi.attr('data-name'));
@@ -2234,7 +2234,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			switch(parent.GamePath)
 			{
 				case "gdkl10":
-				case "L_CQSC":
+				case "cqssc":
 				case "L_K8SC":
 				case "L_PCDD":
 				case "L_PK10":
@@ -2263,7 +2263,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		}else if(type == 'order'){ // 下单请求接口参数对象
 			switch(parent.GamePath)
 			{
-				case "L_CQSC":
+				case "cqssc":
 				case "L_K8SC":
 				case "L_PK10":
 				case "xyft":
