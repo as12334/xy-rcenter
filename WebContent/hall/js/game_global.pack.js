@@ -1206,7 +1206,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 		updateTimeInit: function () {
 			var _this = this;
 			var num = 45;
-			if (_this.playpage == 'six_lm' || _this.playpage == 'six_lm_b' || _this.playpage == 'six_bz' || _this.playpage == 'six_lx' || _this.playpage == 'six_ws' || _this.playpage == 'kl10_lm' || _this.playpage == 'pcdd_lm' || _this.playpage == 'xync_lm' || _this.playpage == 'jssfc_lm') {
+			if (_this.playpage == 'six_lm' || _this.playpage == 'six_lm_b' || _this.playpage == 'six_bz' || _this.playpage == 'six_lx' || _this.playpage == 'six_ws' || _this.playpage == 'gdkl10_lm' || _this.playpage == 'pcdd_lm' || _this.playpage == 'xync_lm' || _this.playpage == 'jssfc_lm') {
 				num = 180;
 			}
 			return num;
@@ -1261,7 +1261,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 						// 渲染基础数据
 						// _this.baseDomHandler( d.data );
 						// 渲染赔率
-						if (_this.playpage == 'kl10_lm' || _this.playpage == 'pcdd_lm' || _this.playpage == 'xync_lm' || _this.playpage == 'jssfc_lm' || _this.playpage == 'six_bz') {
+						if (_this.playpage == 'gdkl10_lm' || _this.playpage == 'pcdd_lm' || _this.playpage == 'xync_lm' || _this.playpage == 'jssfc_lm' || _this.playpage == 'six_bz') {
 							$("#lastSubmit").hide();
 							// 快樂十分連碼，幸运农场连码，六合彩不中统一处理
 							_this.oddsDomLmHandler( d.data );
@@ -2135,7 +2135,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 				if(IE){
 					soundObj.html("<embed src= '../images/ClewSound.swf' loop=false autostart=false mastersound hidden=true width=0 height=0></embed>");
 				}else{
-					soundObj.html('<audio controls="controls" autoplay="autoplay" style="display:none"><source src='+resRoot+'"/images/ClewSound.ogg" type="audio/ogg"><source src="../images/ClewSound.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>');
+					soundObj.html("<audio controls='controls' autoplay='autoplay' style='display:none'><source src='"+resRoot+"/images/ClewSound.ogg' type='audio/ogg'><source src='"+resRoot+"/images/ClewSound.mp3' type='audio/mpeg'>Your browser does not support the audio element.</audio>");
 				}				
 			}
 
@@ -2294,7 +2294,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 				case "gdkl10":
 				case "L_PCDD":
 				case "L_JSSFC":
-					if (subInit.playpage == 'xync_lm' || subInit.playpage == 'kl10_lm' || subInit.playpage == 'pcdd_lm' || subInit.playpage == 'jssfc_lm') {
+					if (subInit.playpage == 'xync_lm' || subInit.playpage == 'gdkl10_lm' || subInit.playpage == 'pcdd_lm' || subInit.playpage == 'jssfc_lm') {
 						Data = {
 							action: 'put_money',
 							phaseid: subInit.orderData['phaseid'],
