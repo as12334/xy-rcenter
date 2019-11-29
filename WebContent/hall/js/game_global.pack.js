@@ -3663,7 +3663,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 						subInit.orderData = {};
 
 						subInit.orderData['i_index'] = 0;
-						subInit.orderData['oddsid'] = oddsId.split('_')[1];
+						subInit.orderData['oddsid'] = oddsId;
 						subInit.orderData['phaseid'] = $("#NowJq").attr('data-id');
 						subInit.orderData['uPI_M'] = oddsPlValue;
 						subInit.orderData['uPI_P'] = subInit.oddsData[ oddsId ]['pl'];
