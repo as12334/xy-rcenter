@@ -651,7 +651,7 @@ define('getBaseDataAjax',['jquery','tips','json2'],function(require, exports, mo
 									that.otherErrorCallBack( data );
 								}else if(data.success == 500){ //500
 									that.otherErrorCallBack( data );
-								}else if(data.success == 600){ //600 赔率变动
+								}else if(data.success == 610){ //610 赔率变动
 									that.oddsErrorCallBack( data );
 								}else if(data.success == 700){
 									tip = tips.msgTips({
@@ -686,23 +686,23 @@ define('getBaseDataAjax',['jquery','tips','json2'],function(require, exports, mo
 					}
 				}catch(error){
 					if (top.ajaxErrorLogSwitch) {
-						$.ajax({
-							url: 'http://'+ window.location.host + '/ViewLog/LogAjaxException.aspx',
-							data: {
-								'url': that.url,
-								'action': JSON.stringify(that.postData),
-								'data': JSON.stringify(data),
-								'error': error.name + ':' + error.message
-							},
-							type: 'POST',
-							cache: false,
-							dataType: 'html',
-							timeout: 20000,
-							async: true,
-							complete: function(XMLHttpRequest, status){},
-							success: function() {},
-							error: function () {}
-						});
+						// $.ajax({
+						// 	url: 'http://'+ window.location.host + '/ViewLog/LogAjaxException.aspx',
+						// 	data: {
+						// 		'url': that.url,
+						// 		'action': JSON.stringify(that.postData),
+						// 		'data': JSON.stringify(data),
+						// 		'error': error.name + ':' + error.message
+						// 	},
+						// 	type: 'POST',
+						// 	cache: false,
+						// 	dataType: 'html',
+						// 	timeout: 20000,
+						// 	async: true,
+						// 	complete: function(XMLHttpRequest, status){},
+						// 	success: function() {},
+						// 	error: function () {}
+						// });
 					}
 				}
 			},
@@ -1913,7 +1913,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 							window.location.reload(true);
 						}, 5000);
 					},
-					oddsErrorCallBack: function (d) { // 600
+					oddsErrorCallBack: function (d) { // 610
 						callBack(d, "error");
 						_this.pourlock = 1;
 					}
@@ -3209,7 +3209,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 								subInit.putinfo();
 								$(".rightBox .tab_btn").eq(1).click();
 							}else{
-								if(d.success == '600'){
+								if(d.success == '610'){
 									var aIndex = d.data.index;
 									var aPl = d.data.newpl;
 									var plBdHtml = '<p class="qoPTitle red">註意：該組合投註賠率已有下列變動：</p>';
@@ -3674,7 +3674,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 								subInit.putinfo();
 								$(".rightBox .tab_btn").eq(1).click();
 							}else{
-								if(d.success == '600'){
+								if(d.success == '610'){
 									var oIndex = d.data.index;
 									var newPl = d.data.newpl[oIndex];
 									subInit.oddsData[ oddsId ]['pl'] = newPl;
@@ -3900,7 +3900,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 									subInit.putinfo();
 									$(".rightBox .tab_btn").eq(1).click();
 								}else{
-									if(d.success == '600'){
+									if(d.success == '610'){
 										var aIndex = d.data.index;
 										var aPl = d.data.newpl;
 										for(var i=0; i<aIndex.length;i++){
@@ -3927,7 +3927,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 											});
 										}
 									}
-									if(d.success == '500'){
+									else if(d.success == '500'){
 										if(d.data.hasOwnProperty('index')){
 											var aIndex = d.data.index;
 											var oTr = $("#orderWrap tr").eq(Number(aIndex[0]));
@@ -3946,7 +3946,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 											$.myLayer.close(true);
 										}
 									}
-									if(d.success == '400'){
+                                    else if(d.success == '400'){
 										var tip = tips.msgTips({
 											msg: d.tipinfo,
 											type : "error"
@@ -4160,7 +4160,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 								subInit.putinfo();
 								$(".rightBox .tab_btn").eq(1).click();
 							}else{
-								if(d.success == '600'){ 
+								if(d.success == '610'){
 									var aIndex = d.data.index;
 									var aPl = d.data.newpl[0];
 									if(d.data.newpl.length > 0){

@@ -159,6 +159,9 @@ define(function(require, exports, module) {
 				}
 			},
 			error: function(data) {
+				if(data.status == 600){
+					window.location.reload();
+				}
 				if(typeof that.errorCallBack == "function"){
 					that.errorCallBack(data);
 				}else{
