@@ -2237,7 +2237,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 				case "cqssc":
 				case "L_K8SC":
 				case "L_PCDD":
-				case "L_PK10":
+				case "bjpk10":
 				case "xyft":
 				case "L_JSCAR":
 				case "L_SPEED5":
@@ -2265,7 +2265,7 @@ define('game_global',['jquery','getBaseDataAjax','tips','skinChange','myLayer','
 			{
 				case "cqssc":
 				case "L_K8SC":
-				case "L_PK10":
+				case "bjpk10":
 				case "xyft":
 				case "L_JSCAR":
 				case "L_SPEED5":
