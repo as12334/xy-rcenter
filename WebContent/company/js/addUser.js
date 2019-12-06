@@ -232,7 +232,7 @@ define(function (require, exports, module) {
 				lowmaxrate_kc.focus();
 				// 信用额度
 				lowmaxrate_kc.myxTips({
-					content: '快彩: ‘占成上限’不可高於 100%，請重新設定！'
+					content: '快彩: ’占成上限’不可高於 100%，請重新設定！'
 				});
 				textHaved = false;
 				return false;
@@ -268,13 +268,16 @@ define(function (require, exports, module) {
 			sub.setIframeLoading();
 			$.ajax({
 				type: 'POST',
-				url: "?",
+				url: root + "/account/saveManagerUser.html?",
 				data: $('#form').serialize(),
 				error: function () { alert('处理程序出错,请通知管理员检查！'); },
 				success: function (msg) {
 					sub.removeAjaxLoading();
 					// try{
-					$("#alert_show").html(msg);
+                    top.setDialogBox(msg,function () {
+                        $("#backBtn").click();
+                    });
+					// $("#alert_show").html(msg);
 					// }catch(e){}
 					// window.parent.$.myLayer.close(true);
 					// $("#iframeTopMask", top.document).remove();
@@ -310,14 +313,13 @@ define(function (require, exports, module) {
 				shaved = false;
 			}else{
 				$.ajax({
-					url: 'ExistNameAjax.aspx',
+					url: root + '/account/existNameAjax.html',
 					type: 'POST',
 					cache: false,
 					dataType: 'json',
 					timeout: 5000,
 					async: false,
 					data:{
-						action: 'existname',
 						uname: usernameVal
 					},
 					success:function (d) {
@@ -546,7 +548,7 @@ define(function (require, exports, module) {
 			return '0';
 		}
 	})();
-	var kcArHtml = '<input style="vertical-align:center; margin-left:2px; " type="text" id="lowmaxrate_kc" name="lowmaxrate_kc" value="'+ kcLowMaxrate +'"  class="text zfNumber" />%';
+	var kcArHtml = '<input style="vertical-align:center; margin-left:2px; " type="text" id="lowmaxrate_kc" name="result.stintOccupy" value="'+ kcLowMaxrate +'"  class="text zfNumber" />%';
 	$("input[name=allowmaxrate_kc]").click(function () {
 		setAllowmaxrate_kc($(this));
 	});
