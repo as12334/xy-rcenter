@@ -199,7 +199,7 @@ define(function(require, exports, module) {
 		}
 		function isOpenPan(num) {
 			var b = new getBaseDataAjax({
-				url: '/Handler/QueryHandler.ashx',
+				url: '/Handler/QueryHandler.html',
 				postData:{
 					action: 'get_openlottery',
 					lid: lid
