@@ -268,7 +268,7 @@ define(function (require, exports, module) {
 			sub.setIframeLoading();
 			$.ajax({
 				type: 'POST',
-				url: root + "/account/saveManagerUser.html?",
+				url: root + "/account/persistUser.html?",
 				data: $('#form').serialize(),
 				error: function () { alert('处理程序出错,请通知管理员检查！'); },
 				success: function (msg) {
