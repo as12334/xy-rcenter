@@ -549,7 +549,7 @@ define(function (require, exports, module) {
 		}
 	})();
 	var kcArHtml = '<input style="vertical-align:center; margin-left:2px; " type="text" id="lowmaxrate_kc" name="result.stintOccupy" value="'+ kcLowMaxrate +'"  class="text zfNumber" />%';
-	$("input[name=allowmaxrate_kc]").click(function () {
+	$("input[name='result.stintOccupySwitch']").click(function () {
 		setAllowmaxrate_kc($(this));
 	});
 
@@ -564,7 +564,7 @@ define(function (require, exports, module) {
 	}
 	// 初始化下綫可占成數
 	setAllowmaxrate_six($("input[name=allowmaxrate_six]:checked"));
-	setAllowmaxrate_kc($("input[name=allowmaxrate_kc]:checked"));
+	setAllowmaxrate_kc($("input[name='result.stintOccupySwitch']:checked"));
 
 	var limi = (function () {
 		try{
