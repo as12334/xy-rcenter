@@ -1421,8 +1421,8 @@ div.lmWtWarp span{
 }
 
 /*用户管理小图标*/
-.GSico,.HYico,.TSico,.XGico,.RZico,.JLico,.Delico,.Reico,.Infoico{height:18px; line-height:18px; background:url(../../images/icon.gif) no-repeat;float:left;padding-left:22px;padding-right:2px; vertical-align:middle;}
-.BFDico,.BFWico{height:18px; line-height:18px; background:url(../../images/icon.gif) no-repeat;padding-left:22px;padding-right:2px; margin:0 auto; vertical-align:middle;}
+.GSico,.HYico,.TSico,.XGico,.RZico,.JLico,.Delico,.Reico,.Infoico{height:18px; line-height:18px; background:url(../images/icon.gif) no-repeat;float:left;padding-left:22px;padding-right:2px; vertical-align:middle;}
+.BFDico,.BFWico{height:18px; line-height:18px; background:url(../images/icon.gif) no-repeat;padding-left:22px;padding-right:2px; margin:0 auto; vertical-align:middle;}
 .GSico{ background-position:0 1px;}
 .HYico{ background-position:0 -18px;}
 .TSico{ background-position:0 -36px;}
