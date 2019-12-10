@@ -183,6 +183,7 @@ define(function (require, exports, module) {
 		var submitSrt = '';
 		$(".text").each(function () {
 			var that = $(this);
+            var max = that.attr("data-max");
 			var thatId = that.attr('id');
 			if(!that.hasClass('zk') && that.is(":visible") == true){
 
@@ -196,12 +197,12 @@ define(function (require, exports, module) {
 					setTips(that, true);
 					textHaved = false;
 					return false;
-				}else if(Number(that.val()) > Number(drawBackjson[thatId.split('_')[0]][thatId]) && that.attr('name').indexOf('single_min') == -1){
+				}else if(Number(that.val()) > Number(max) && that.attr('name').indexOf('single_min') == -1){
 					findTabBox(that);
 					setTips(that, true);
 					textHaved = false;
 					return false;
-				}else if(Number(that.val()) < Number(drawBackjson[thatId.split('_')[0]][thatId]) && that.attr('name').indexOf('single_min') != -1){
+				}else if(Number(that.val()) < Number(max) && that.attr('name').indexOf('single_min') != -1){
 					findTabBox(that);
 					setTips(that, true);
 					textHaved = false;
@@ -220,51 +221,119 @@ define(function (require, exports, module) {
 		});
 		if(textHaved){
 			sub.setIframeLoading();
+            var array = [];
+            var obj;
 
-			$(".text").each(function () {
-				var that = $(this);
-				var thatName = that.attr('name');
-				var thatVal = that.attr('data-val');
-				var newVal = that.val();
+            $(".tm3 .list_hover").each(function () {
+                var that = $(this);
+                that.find("input").each(function () {
+                	var thatVal = $(this).attr('data-val');
+                	var newVal  = $(this).val();
 
-				if(!that.hasClass('zk')){
-					if (thatVal != newVal) {
-						var thatAttr = thatName.split('_');
-						var pid = thatAttr[thatAttr.length-1];
-						var game = thatAttr[0];
-						var obj1 = $("#"+ game +"_a_"+pid);
-						var obj2 = $("#"+ game +"_b_"+pid);
-						var obj3 = $("#"+ game +"_c_"+pid);
-						var obj4 = $("#"+ game +"_max_amount_"+pid);
-						var obj5 = $("#"+ game +"_phase_amount_"+pid);
-						var obj6 = $("#"+ game +"_single_min_amount_"+pid);
-						dataAttr.push(game +"_a_"+pid + '=' + obj1.val());
-						dataAttr.push(game +"_b_"+pid + '=' + obj2.val());
-						dataAttr.push(game +"_c_"+pid + '=' + obj3.val());
-						dataAttr.push(game +"_max_amount_"+pid + '=' + obj4.val());
-						dataAttr.push(game +"_phase_amount_"+pid + '=' + obj5.val());
-						dataAttr.push(game +"_single_min_amount_"+pid + '=' + obj6.val());
-						pidAttr.push(game+'_'+pid);
-					}
-				}
-			});
+                    if (thatVal != newVal) {
 
-			dataAttr = dataAttr.uniquelize();
-			pidAttr = pidAttr.uniquelize();
+                        var code = that.find("[name='code']").text();
+                        var betSort = that.find("[name='betSort']").text();
+                        var rebateA = that.find("input").eq(0).val();
+                        var rebateB = that.find("input").eq(1).val();
+                        var rebateC = that.find("input").eq(2).val();
+                        var maxBet = that.find("input").eq(3).val();
+                        var maxExpectBet = that.find("input").eq(4).val();
+                        var minBet = that.find("input").eq(5).val();
+                        obj = {
+                            'code': code,
+                            'betSort': betSort,
+                            'minBet': minBet,
+                            'maxBet': maxBet,
+                            'maxExpectBet': maxExpectBet,
+                            'rebateA': rebateA,
+                            'rebateB': rebateB,
+                            'rebateC': rebateC
+                        };
+                        array.push(obj);
+                        return false;
+                    }
+                });
+
+            });
 
 
 
-			submitSrt = dataAttr.join('&') + '&savenew=' + ($('#savenew').is(':checked')?1:0) + '&hdnSubmit=' + $('#hdnSubmit').val() + '&uid=' + $('#uid').val() + '&isAdd=' + $('#isAdd').val() + '&namestr=' + pidAttr.join(',');
-			if(dataAttr.length > 0){
+
+
+
+
+			// $(".text").each(function () {
+			// 	var that = $(this);
+			// 	var thatName = that.attr('name');
+			// 	var thatVal = that.attr('data-val');
+			// 	var newVal = that.val();
+            //
+			// 	if(!that.hasClass('zk')){
+			// 		if (thatVal != newVal) {
+            //
+             //            var code = that.parent().parent().find("input").eq(0);
+             //            var betSort = that.parent().parent().find("input").eq(1);
+             //            var rebateA = that.parent().parent().find("input").eq(2);
+             //            var rebateA = that.parent().parent().find("input").eq(3);
+             //            var rebateA = that.parent().parent().find("input").eq(4);
+             //            var maxBet = that.parent().parent().find("input").eq(5);
+             //            var maxExpectBet = that.parent().parent().find("input").eq(7);
+             //            var minBet = that.parent().parent().find("input").eq(8);
+            //
+            //
+            //
+			// 			var thatAttr = thatName.split('_');
+			// 			var pid = thatAttr[thatAttr.length-1];
+			// 			var game = thatAttr[0];
+			// 			var obj1 = $("#"+ game +"_a_"+pid);
+			// 			var obj2 = $("#"+ game +"_b_"+pid);
+			// 			var obj3 = $("#"+ game +"_c_"+pid);
+			// 			var obj4 = $("#"+ game +"_max_amount_"+pid);
+			// 			var obj5 = $("#"+ game +"_phase_amount_"+pid);
+			// 			var obj6 = $("#"+ game +"_single_min_amount_"+pid);
+			// 			dataAttr.push(game +"_a_"+pid + '=' + obj1.val());
+			// 			dataAttr.push(game +"_b_"+pid + '=' + obj2.val());
+			// 			dataAttr.push(game +"_c_"+pid + '=' + obj3.val());
+			// 			dataAttr.push(game +"_max_amount_"+pid + '=' + obj4.val());
+			// 			dataAttr.push(game +"_phase_amount_"+pid + '=' + obj5.val());
+			// 			dataAttr.push(game +"_single_min_amount_"+pid + '=' + obj6.val());
+			// 			pidAttr.push(game+'_'+pid);
+			// 		}
+            //
+             //        var code = $(this).find("input[name='code']").val();
+             //        var betSort = $(this).find("input[name='betSort']").val();
+             //        var minBet = $(this).find("input[name^='minBet']").val();
+             //        var maxBet = $(this).find("input[name^='maxBet']").val();
+             //        var maxExpectBet = $(this).find("input[name^='maxExpectBet']").val();
+             //        var rebateA = $(this).find("input[name^='rebateA']").val();
+             //        var rebateB = $(this).find("input[name^='rebateB']").val();
+             //        var rebateC = $(this).find("input[name^='rebateC']").val();
+            //
+			// 	}
+			// });
+
+			// dataAttr = dataAttr.uniquelize();
+			// pidAttr = pidAttr.uniquelize();
+            //
+            //
+            //
+			// submitSrt = dataAttr.join('&') + '&savenew=' + ($('#savenew').is(':checked')?1:0) + '&hdnSubmit=' + $('#hdnSubmit').val() + '&uid=' + $('#uid').val() + '&isAdd=' + $('#isAdd').val() + '&namestr=' + pidAttr.join(',');
+            var url = root + "/siteLotteryRebates/saveSiteLotteryRebates.html";
+            data['lotteryRebatesJson'] = JSON.stringify(array);
+            data['search.hid'] = $("[name='search.hid']").val();
+			if(array.length > 0){
 				$.ajax({
 					type: 'POST',
-					url: "?",
+					url: url,
 					// data: $('#form_six').serialize(),
-					data: submitSrt,
+					data: data,
+                    dataType: 'json',
 					error: function () { alert('处理程序出错,请通知管理员检查！'); },
-					success: function (msg) {
+					success: function (data) {
 						sub.removeAjaxLoading();
-						$("#alert_show").html(msg);
+                        alert(data.msg);
+                        history.go(-1);
 					}
 				});
 			}else{
