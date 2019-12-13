@@ -1804,6 +1804,7 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 				postData:{
 					action: 'get_clyl'
 				},
+				dataType:'json',
 				completeCallBack:function () {},
 				successCallBack:function (d) {
 					// 遗漏
@@ -1889,6 +1890,7 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 			var b = new getBaseDataAjax({
                 url: 'handler/handler.html',
 				postData: postData,
+                dataType:"json",
 				async: true,
 				completeCallBack:function () {},
 				successCallBack:function (d) {
