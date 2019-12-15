@@ -879,7 +879,7 @@ define('plus',function(require, exports, moudles) {
 			$.fn.addAndSubLoading = function(options) {
 				var opts = $.extend({},
 				$.fn.addAndSubLoading.defaults, options);
-				var _tmp = '<div class="addSubLoading"><img src="../Images/loading27.gif"></div>';
+				var _tmp = '<div class="addSubLoading"><img src= "'+ resRoot +'/themes/images/loading27.gif"></div>';
 				$(this).parent('div').append(_tmp);
 			};
 
@@ -2987,7 +2987,7 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 			var minBtns = $('.minBtns');
 			// 賠率事件綁定
 			// if( p.usertype == '1'){
-				if( p.isopt == '1'){
+			// 	if( p.isopt == '1'){
 					var tip = null;
 					// 弹出层设置赔率
 					tableBody.undelegate('.oddsTrim', 'click');
@@ -3047,11 +3047,12 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 							}
 						});
 					}
-				}else{
-					tableBody.undelegate('.oddsTrim', 'click');
-					addBtns.hide();
-					minBtns.hide();
-				}
+				// }
+				// else{
+				// 	tableBody.undelegate('.oddsTrim', 'click');
+				// 	// addBtns.hide();
+				// 	// minBtns.hide();
+				// }
 		},
 		// 找上一個節點(赔率、补货弹窗)
 		findLastObj: function (arr) {
