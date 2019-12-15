@@ -1913,7 +1913,7 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 							_this.baseDomAjax( seconds + 1 );
 						}else{
 							$.myLayer.close(true, window.top.myLayerIndex);
-							window.location.href = "../noopen.aspx?lid=" + p.myLid + '&path=' + encodeURIComponent(p.myPath);
+							window.location.href = "noopen.html?lid=" + p.myLid + '&path=' + encodeURIComponent(p.myPath);
 						}
 					}
 				},
