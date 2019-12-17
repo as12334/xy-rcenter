@@ -1963,6 +1963,7 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 					postData:{
 						action: 'get_opennumber'
 					},
+					dataType:'json',
 					async: true,
 					completeCallBack:function () {},
 					successCallBack:function (d) {
@@ -2986,73 +2987,74 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 			var addBtns = $('.addBtns');
 			var minBtns = $('.minBtns');
 			// 賠率事件綁定
-			// if( p.usertype == '1'){
-			// 	if( p.isopt == '1'){
-					var tip = null;
-					// 弹出层设置赔率
+			if( p.usertype == '1') {
+                if (p.isopt == '1') {
+                    var tip = null;
+                    // 弹出层设置赔率
+                    tableBody.undelegate('.oddsTrim', 'click');
+                    tableBody.delegate('.oddsTrim', 'click', function () {
+                        var that = $(this);
+                        _this.aOddsThat = [that.attr('id')];
+                        _this.flyAwayThat = [];
+                        isUpdataFlyAway = true;
+                        _this.oddsTrimModuleInit(that);
+                    });
+                    // 加号设置赔率
+                    tableBody.undelegate('.addBtns', 'click');
+                    tableBody.delegate('.addBtns', 'click', function () {
+                        var that = $(this).siblings('a');
+                        var key = that.attr('data-odds');
+                        var difference = $('#tool_input').val() - 0 || 0.01;
+                        if (ForDight4(Number(that.html() - 0 + difference)) > Number(_this.myData[key]['OddsMaxValue'])) {
+                            tip = tips.msgTips({
+                                msg: '當前修改賠率不能大於系統設定最大賠率:' + _this.myData[key]['OddsMaxValue'] + '！',
+                                type: "error"
+                            });
+                        } else {
+                            $(this).addAndSubLoading();
+                            _this.baseOddsAjax('1', key, difference, '');
+                        }
+                    }).show();
+                    // 减号设置赔率
+                    tableBody.undelegate('.minBtns', 'click');
+                    tableBody.delegate('.minBtns', 'click', function () {
+                        var that = $(this).siblings('a');
+                        var key = that.attr('data-odds');
+                        var difference = $('#tool_input').val() - 0 || 0.01;
+                        if (Number(accSub(Number(that.html()), difference)) < Number(_this.myData[key]['OddsMinValue'])) {
+                            tip = tips.msgTips({
+                                msg: '當前修改賠率不能小於' + _this.myData[key]['OddsMinValue'] + '！',
+                                type: "error"
+                            });
+                        } else {
+                            $(this).addAndSubLoading();
+                            _this.baseOddsAjax('2', key, difference, '');
+                        }
+                    }).show();
+                    // 单球开关
+                    if (p.usertype == '1') {
+                        tableBody.undelegate('.ballOpenBtn', 'click');
+                        tableBody.delegate('.ballOpenBtn', 'click', function () {
+                            var $this = $(this);
+                            var $thisTr = $this.parents('.oddsParent').eq(0);
+                            var $that = $thisTr.find('.oddsTrim');
+                            if (d.openning == 'y') {
+                                _this.baseOddsAjax('4', $that.attr('data-odds'), '', '');
+                            } else {
+                                tip = tips.msgTips({
+                                    msg: '封盤狀態下不能操作！',
+                                    type: "error"
+                                });
+                            }
+                        });
+                    }
+                }
+            }
+				else{
 					tableBody.undelegate('.oddsTrim', 'click');
-					tableBody.delegate('.oddsTrim', 'click', function () {
-						var that = $(this);
-						_this.aOddsThat = [that.attr('id')];
-						_this.flyAwayThat = [];
-						isUpdataFlyAway = true;
-						_this.oddsTrimModuleInit(that);
-					});
-					// 加号设置赔率
-					tableBody.undelegate('.addBtns', 'click');
-					tableBody.delegate('.addBtns', 'click', function () {
-						var that = $(this).siblings('a');
-						var key = that.attr('data-odds');
-						var difference = $('#tool_input').val()-0 || 0.01;
-						if(ForDight4(Number(that.html() - 0 + difference)) > Number(_this.myData[key]['OddsMaxValue'])){
-							tip = tips.msgTips({
-								msg: '當前修改賠率不能大於系統設定最大賠率:'+ _this.myData[key]['OddsMaxValue'] +'！',
-								type : "error"
-							});
-						}else{
-							$(this).addAndSubLoading();
-							_this.baseOddsAjax('1', key, difference, '');
-						}
-					}).show();
-					// 减号设置赔率
-					tableBody.undelegate('.minBtns', 'click');
-					tableBody.delegate('.minBtns', 'click', function () {
-						var that = $(this).siblings('a');
-						var key = that.attr('data-odds');
-						var difference = $('#tool_input').val()-0 || 0.01;
-						if(Number(accSub(Number(that.html()), difference)) < Number(_this.myData[key]['OddsMinValue'])){
-							tip = tips.msgTips({
-								msg: '當前修改賠率不能小於'+ _this.myData[key]['OddsMinValue'] +'！',
-								type : "error"
-							});
-						}else{
-							$(this).addAndSubLoading();
-							_this.baseOddsAjax('2', key, difference, '');
-						}
-					}).show();
-					// 单球开关
-					if(p.usertype == '1'){
-						tableBody.undelegate('.ballOpenBtn', 'click');
-						tableBody.delegate('.ballOpenBtn', 'click', function () {
-							var $this = $(this);
-							var $thisTr = $this.parents('.oddsParent').eq(0);
-							var $that = $thisTr.find('.oddsTrim');
-							if(d.openning == 'y'){
-								_this.baseOddsAjax('4', $that.attr('data-odds'), '', '');
-							}else{
-								tip = tips.msgTips({
-									msg: '封盤狀態下不能操作！',
-									type : "error"
-								});
-							}
-						});
-					}
-				// }
-				// else{
-				// 	tableBody.undelegate('.oddsTrim', 'click');
-				// 	// addBtns.hide();
-				// 	// minBtns.hide();
-				// }
+					addBtns.hide();
+					minBtns.hide();
+				}
 		},
 		// 找上一個節點(赔率、补货弹窗)
 		findLastObj: function (arr) {
