@@ -3449,6 +3449,7 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 			var b = new getBaseDataAjax({
                 url: 'handler/handler.html',
 				postData: postOddsData,
+				dataType:'json',
 				completeCallBack:function () { 
 					for(var i = 0; i<arrOddsId.length; i++){
 						if(optype == '1' || optype == '2'){
@@ -4500,7 +4501,7 @@ define('Betimes',['jquery','plus','myLayer','tips','array','getBaseDataAjax','so
 					'</div>'+
 					'<div id="oddsTrimMain">'+
 						'<div id="oddsTrimLoading">'+
-							'<img src="/images/loader.gif">'+
+							'<img src="'+resRoot+'/images/loader.gif">'+
 							'<p>提交中，請稍後</p>'+
 						'</div>'+
 						'<div class="oddsTrimMainLine">'+

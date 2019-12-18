@@ -482,7 +482,8 @@ define(function(require, exports, module) {
 			if (tipsHtml != $("#jpWrap").text()) {
 				$("#jpWrap").html(tipsHtml);
 				// sound 插入降赔声音
-				sound('jp');
+				//TODO 降赔率关掉声音
+				// sound('jp');
 				setTimeout(autoAnimation, 5000);
 			}
 		}

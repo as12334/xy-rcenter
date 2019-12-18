@@ -233,7 +233,7 @@
     border-bottom: 1px dotted #a6bbd5;
 }
 .skinBlue .topBox .menuBox .navBox div a{
-    background:url("../images/menu_a_bg.gif") no-repeat scroll 12px center #fff;
+    background:url("../../images/menu_a_bg.gif") no-repeat scroll 12px center #fff;
     border: medium none;
     border-radius: 0;
     display: inline-block;
