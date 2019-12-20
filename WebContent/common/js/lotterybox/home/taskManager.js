@@ -196,6 +196,7 @@ define(['common/BasePage','moment'], function (BasePage, Moment) {
                             $(".clock-show").attr("time",date.getTime());
                             var themoment = new Moment(date);
                             themoment.utcOffset(data.timeZone, false);
+                            window.top.utcOffSet = data.timeZone;
                             $(".clock-show").text(themoment.format(_this.dateTimeFromat));
                         }
                     },1000);
