@@ -25,9 +25,13 @@ define(function(require, exports, module) {
 	pic_input.attr('data-isSubmit', '0');
 
 	$("#year").html(myYear);
-	var url = '/Handler/LoginHandler.ashx?action=user_login';
+	var url = root + '/passport/login.html?action=user_login';
 	$("#login_btn").click(function () {
 		var objBtn = $(this);
+        var userName = $("[name='name']").val();
+        var siteCode = $("[name='siteCode']").val();
+        $("[name='username']").val(userName+'@'+siteCode);
+
 		if (CheckText()) {
 			objBtn.prop('disabled', 'disabled').html('登錄中...').addClass('btnD');
 			$.ajax({
@@ -62,11 +66,11 @@ define(function(require, exports, module) {
 								okText: '確定',
 								isCancelBtn: false,
 								okCallBack: function () {
-									window.location.href = "./index.aspx";
+									window.location.href = root + "/index.html";
 								}
 							});
 						}else{
-							window.location.href = "./index.aspx";
+                            window.location.href = root + "/index.html";
 						}
 					} else if (d.success == 550) {
 						objBtn.prop('disabled', false).html('登錄').removeClass('btnD');
@@ -78,7 +82,7 @@ define(function(require, exports, module) {
 							okText: '確定',
 							isCancelBtn: false,
 							okCallBack: function () {
-								window.location.href = "./ResetPasswd.aspx";
+								window.location.href = root +"/passport/ResetPasswd.html";
 							}
 						});
 					} else if (d.success == 560) {
