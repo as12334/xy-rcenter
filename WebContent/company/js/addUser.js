@@ -265,7 +265,7 @@ define(function (require, exports, module) {
         }
 
         if(textHaved){
-            sub.setIframeLoading();
+            // sub.setIframeLoading();
             $.ajax({
                 type: 'POST',
                 url: root + "/account/persistUser.html?",
